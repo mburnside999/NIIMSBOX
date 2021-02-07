@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clinical_Justification__c</fullName>
+    <description>Clinical justification for using the unapproved good. This should address expected benefits of the proposed medicine versus its potential risks, including evidence1 of:
+- the unapproved good’s suitability for the intended indication
+- the unapproved good’s efficacy and expected benefits
+- any unknown or expected adverse effects, risks and safety issues
+- related toxicology</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Clinical justification for using the unapproved good. This should address expected benefits of the proposed medicine versus its potential risks</inlineHelpText>
+    <label>Clinical Justification</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

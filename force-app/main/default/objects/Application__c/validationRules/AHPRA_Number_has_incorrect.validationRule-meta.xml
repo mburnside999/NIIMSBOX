@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AHPRA_Number_has_incorrect</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT (REGEX(AHPRA_Number__c,&quot;[A-Z]{3}[0-9]{10}&quot;))</errorConditionFormula>
+    <errorDisplayField>AHPRA_Number__c</errorDisplayField>
+    <errorMessage>Format of the AHPRA number is A3N10 e.g. MED0000000001</errorMessage>
+</ValidationRule>

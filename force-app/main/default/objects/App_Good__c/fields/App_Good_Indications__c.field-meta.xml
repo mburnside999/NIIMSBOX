@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>App_Good_Indications__c</fullName>
+    <externalId>false</externalId>
+    <label>App Good Indications</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Neuropathic Pain</fullName>
+                <default>false</default>
+                <label>Neuropathic Pain</label>
+            </value>
+            <value>
+                <fullName>Cancer Related Pain</fullName>
+                <default>false</default>
+                <label>Cancer Related Pain</label>
+            </value>
+            <value>
+                <fullName>Chemotherapy induced nausea &amp; Vomiting (CINV)</fullName>
+                <default>false</default>
+                <label>Chemotherapy induced nausea &amp; Vomiting (CINV)</label>
+            </value>
+            <value>
+                <fullName>Anxiety Disorder including PTSD</fullName>
+                <default>false</default>
+                <label>Anxiety Disorder including PTSD</label>
+            </value>
+            <value>
+                <fullName>Autism / ASD</fullName>
+                <default>false</default>
+                <label>Autism / ASD</label>
+            </value>
+            <value>
+                <fullName>Insomnia</fullName>
+                <default>false</default>
+                <label>Insomnia</label>
+            </value>
+            <value>
+                <fullName>Parkinsons</fullName>
+                <default>false</default>
+                <label>Parkinsons</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

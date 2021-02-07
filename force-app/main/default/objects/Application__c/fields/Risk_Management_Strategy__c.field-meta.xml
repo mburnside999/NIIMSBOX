@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Management_Strategy__c</fullName>
+    <description>How will risks associated with the use of the unapproved good be managed? This should address:
+Process of obtaining informed consent from patients
+Monitoring and reporting that will be undertaken (include details of interval and duration of monitoring)
+Process of investigating and reporting adverse events</description>
+    <externalId>false</externalId>
+    <label>Risk Management Strategy</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

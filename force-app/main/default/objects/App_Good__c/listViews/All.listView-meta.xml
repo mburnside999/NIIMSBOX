@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Application__c</columns>
+    <columns>Good__c</columns>
+    <columns>App_Good_Indications__c</columns>
+    <columns>Anxiety_PSD__c</columns>
+    <columns>ASD__c</columns>
+    <columns>Cancer__c</columns>
+    <columns>Chemotherapy__c</columns>
+    <columns>Insomnia__c</columns>
+    <columns>Anxiety_Disorder_including_PTSD__c</columns>
+    <columns>Neuropathic_Pain__c</columns>
+    <columns>Parkinsons__c</columns>
+    <columns>Other_Indications__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>
