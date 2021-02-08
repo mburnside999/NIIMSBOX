@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_In_Other_Jurisdiction__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If the good is approved in another jurisdiction(s) please record them here</inlineHelpText>
+    <label>Approved In Other Jurisdiction?</label>
+    <length>150</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

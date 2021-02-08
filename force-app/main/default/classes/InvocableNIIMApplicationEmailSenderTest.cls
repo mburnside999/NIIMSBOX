@@ -13,11 +13,7 @@ public with sharing class InvocableNIIMApplicationEmailSenderTest {
       Application__c = a.Id
     );
     insert ag;
-    Indication__c i = new Indication__c(
-      indication__c = 'xx',
-      Application__c = a.Id
-    );
-    insert i;
+    
 
     InvocableNIIMApplicationEmailSender.Requests argument;
     argument = new InvocableNIIMApplicationEmailSender.Requests();

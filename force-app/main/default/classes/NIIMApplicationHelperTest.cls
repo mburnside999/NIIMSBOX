@@ -13,11 +13,7 @@ private class NIIMApplicationHelperTest {
       Application__c = a.Id
     );
     insert ag;
-    Indication__c i = new Indication__c(
-      indication__c = 'xx',
-      Application__c = a.Id
-    );
-    insert i;
+    
 
 //test for handling of an invalid email
     try {
