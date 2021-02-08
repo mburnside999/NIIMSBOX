@@ -1,0 +1,12 @@
+<apex:page standardcontroller="Application__c" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>NIIM< Application to Prescribe Medicinal Cannabis</h1>
+
+
+<p>Application: {!application__c.name} </p>
+ 
+ <p> {!application__c.Practitioner_s_name__c} </p>
+
+
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
