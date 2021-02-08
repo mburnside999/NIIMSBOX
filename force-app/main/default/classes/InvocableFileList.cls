@@ -4,7 +4,6 @@ global with sharing class InvocableFileList{
 	'Invocable File List ')
 	public static List<List<contentversion>> doAction(Request[] requests){
 		// Process requests
-		// Example: Query parents in bulk
 		Map<Id, contentversion> parents = new Map<Id, contentversion>();
 
 		String applicationId = requests[0].recordId;
@@ -22,7 +21,7 @@ global with sharing class InvocableFileList{
 
 			listcv.add(cv);
 		}
-
+		//prepare a List of Lists
 		listlistcv.add(listcv);
 
 
