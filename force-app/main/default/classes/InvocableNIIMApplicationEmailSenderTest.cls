@@ -8,11 +8,6 @@ public with sharing class InvocableNIIMApplicationEmailSenderTest{
 		insert ag;
 
 
-		InvocableNIIMApplicationEmailSender.Requests argument;
-		argument = new InvocableNIIMApplicationEmailSender.Requests();
-		argument.email = 'burnside.mike@gmail.com';
-		argument.applicationId = a.id;
-
 		List<String> teststr = new List<String>();
 		teststr = InvocableNIIMApplicationEmailSender.sender(new List<InvocableNIIMApplicationEmailSender.Requests>{argument});
 		System.assert(teststr[0] == 'Completed');

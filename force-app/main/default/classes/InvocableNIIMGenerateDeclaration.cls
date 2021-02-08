@@ -58,3 +58,4 @@ global with sharing class InvocableNIIMGenerateDeclaration{
 
 	}
 }
+}
