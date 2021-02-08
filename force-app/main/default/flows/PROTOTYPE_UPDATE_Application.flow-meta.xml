@@ -4,8 +4,8 @@
     <assignments>
         <name>asgnCompleteStg</name>
         <label>Set Complete Stage</label>
-        <locationX>1340</locationX>
-        <locationY>422</locationY>
+        <locationX>1590</locationX>
+        <locationY>485</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>asgnDeclarationStg</name>
         <label>Set Declaration Stage</label>
-        <locationX>1055</locationX>
-        <locationY>422</locationY>
+        <locationX>1310</locationX>
+        <locationY>486</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -36,8 +36,8 @@
     <assignments>
         <name>asgnGoodIndsStg</name>
         <label>Set Product Stage</label>
-        <locationX>330</locationX>
-        <locationY>264</locationY>
+        <locationX>414</locationX>
+        <locationY>252</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -46,14 +46,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>The_Unapproved_Goods_1</targetReference>
+            <targetReference>loopscr</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>asgnPrescriberStg</name>
         <label>Set Prescriber Stage</label>
-        <locationX>566</locationX>
-        <locationY>76</locationY>
+        <locationX>1238</locationX>
+        <locationY>74</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -68,8 +68,8 @@
     <assignments>
         <name>asgnSupportDocsStg</name>
         <label>Set Supporting Docs Stage</label>
-        <locationX>672</locationX>
-        <locationY>264</locationY>
+        <locationX>1201</locationX>
+        <locationY>204</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -78,14 +78,156 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Supporting_Documents</targetReference>
+            <targetReference>Files_List</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assignupdates</name>
+        <label>assignupdates</label>
+        <locationX>50</locationX>
+        <locationY>433</locationY>
+        <assignmentItems>
+            <assignToReference>myloop.Clinical_Justification__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPD_Clinical_Justification</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Active_Ingredients_Concentrations__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDActive_Ingredient_s_And_Concentrations</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.App_Good_Indications_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDOther_Clinical_Indications_Notes</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Approved_Good_Alternative__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDIs_there_an_approved_Good_for_the_same_indication</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Dosage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDDosage</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Dosage_Form__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDDosage_Form</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Dosage_Range__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDDosage_Range</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Expected_Duration_Of_Treatment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDExpected_Duration_of_Treatment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Justification_Not_Using_Alternative__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDClinical_justification_for_using_the_unapproved_good</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Seriousness__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDSeriousness_of_the_medical_condition_s_for_which_the_good_will_be_used</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Tried_Will_Try_Approved_Alternative__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDHave_you_already_or_will_you_attempt_to_use_the_approved_good_prior</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Justification_Not_Using_Alternative__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDWhy_is_the_approved_good_inappropriate_or_unsuitable_for_use</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Product_Trade_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDProduct_Trade_Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Product_Company__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDProduct_Company</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Sponsor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDSponsor_Company_From_Whom_You_Will_Obtain_The_Unapproved_Good</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Seriousness__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDSeriousness_of_the_medical_condition_s_for_which_the_good_will_be_used</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Product_Company__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDProduct_Company</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Product_Trade_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDProduct_Trade_Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>myloop.Sponsor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>UPDSponsor_Company_From_Whom_You_Will_Obtain_The_Unapproved_Good</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>updacollection</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Set_Indications_and_Dosages</name>
         <label>Set Indications and Dosages</label>
-        <locationX>148</locationX>
-        <locationY>374</locationY>
+        <locationX>1028</locationX>
+        <locationY>553</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -94,9 +236,49 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Unapproved_Goods_Screen2</targetReference>
+            <targetReference>The_Unapproved_Goods_1</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>setIndications</name>
+        <label>setIndications</label>
+        <locationX>186</locationX>
+        <locationY>272</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Indications_Dosage_and_Justifications</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>loopscr2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>updacollection</name>
+        <label>updacollection</label>
+        <locationX>439</locationX>
+        <locationY>432</locationY>
+        <assignmentItems>
+            <assignToReference>appgoodcollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>myloop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myloop</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>AddNomoregoods</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
     <choices>
         <name>CancerRelatedPain</name>
         <choiceText>Cancer Related Pain</choiceText>
@@ -130,6 +312,14 @@
         </value>
     </choices>
     <choices>
+        <name>Nomoregoods</name>
+        <choiceText>No, I&apos;m finished adding goods</choiceText>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </choices>
+    <choices>
         <name>Other</name>
         <choiceText>Other (please specify below)</choiceText>
         <dataType>String</dataType>
@@ -145,33 +335,55 @@
             <stringValue>Parkinsons</stringValue>
         </value>
     </choices>
+    <choices>
+        <name>YesMore</name>
+        <choiceText>Yes, I want to add more</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
     <decisions>
-        <name>Add_Another_Good</name>
-        <label>More Goods?</label>
-        <locationX>694</locationX>
-        <locationY>508</locationY>
+        <name>WantToAddMoreGoods</name>
+        <label>WantToAddMoreGoods</label>
+        <locationX>896</locationX>
+        <locationY>496</locationY>
         <defaultConnector>
             <targetReference>asgnDeclarationStg</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Yes_Add</name>
+            <name>YesIWantto</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Yes</leftValueReference>
+                <leftValueReference>radiodecide</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <elementReference>YesMore</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>The_Unapproved_Goods_1</targetReference>
+                <targetReference>Set_Indications_and_Dosages</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
     </decisions>
     <interviewLabel>PROTOTYPE UPDATE Applciation {!$Flow.CurrentDateTime}</interviewLabel>
     <label>PROTOTYPE UPDATE Application</label>
+    <loops>
+        <name>myloop</name>
+        <label>myloop</label>
+        <locationX>574</locationX>
+        <locationY>204</locationY>
+        <collectionReference>getAppGoods</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>asgnGoodIndsStg</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>updateappgoodscollection</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -192,97 +404,13 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <description>Creates application record from the form in previous element</description>
-        <name>Create_Application_Record</name>
-        <label>Create Application Record</label>
-        <locationX>981</locationX>
-        <locationY>266</locationY>
-        <assignRecordIdToReference>NewApplicationRecord.Id</assignRecordIdToReference>
-        <connector>
-            <targetReference>get_ApplicationRecord</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>ABN__c</field>
-            <value>
-                <elementReference>ABN</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>AHPRA_Number__c</field>
-            <value>
-                <elementReference>AHPRA_Number</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Address__c</field>
-            <value>
-                <elementReference>Address</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Email__c</field>
-            <value>
-                <elementReference>Email</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Medicare_Provider_Number__c</field>
-            <value>
-                <elementReference>Medicare_Provider_Number</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Phone_Number__c</field>
-            <value>
-                <elementReference>Phone</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Practitioner_s_Name__c</field>
-            <value>
-                <elementReference>Name</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Professional_Association_Membership__c</field>
-            <value>
-                <elementReference>Professional_Association_Membership_Number</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Qualifications_and_Expertise__c</field>
-            <value>
-                <elementReference>Qualifications_and_Expertise</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Risk_Management_Strategy__c</field>
-            <value>
-                <elementReference>RiskManagementStrategy</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Sites__c</field>
-            <value>
-                <elementReference>Sites</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status__c</field>
-            <value>
-                <stringValue>New</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Application__c</object>
-    </recordCreates>
-    <recordCreates>
         <name>Create_New_App_Good</name>
         <label>Create New App-Good Record</label>
-        <locationX>331</locationX>
-        <locationY>680</locationY>
+        <locationX>781</locationX>
+        <locationY>693</locationY>
         <assignRecordIdToReference>NewAppGood.Id</assignRecordIdToReference>
         <connector>
-            <targetReference>Append_Product_Information</targetReference>
+            <targetReference>More_Goods</targetReference>
         </connector>
         <inputAssignments>
             <field>Active_Ingredients_Concentrations__c</field>
@@ -305,7 +433,7 @@
         <inputAssignments>
             <field>Application__c</field>
             <value>
-                <elementReference>NewApplicationRecord.Id</elementReference>
+                <elementReference>varInboundApplicationID</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -389,11 +517,62 @@
         <object>App_Good__c</object>
     </recordCreates>
     <recordLookups>
-        <name>get_ApplicationRecord</name>
-        <label>Get new Application&apos;s ref no.</label>
-        <locationX>838</locationX>
-        <locationY>264</locationY>
+        <name>getAppGoods</name>
+        <label>getAppGoods</label>
+        <locationX>832</locationX>
+        <locationY>204</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>myloop</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Application__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInboundApplicationID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>App_Good__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getApplication</name>
+        <label>getApplication</label>
+        <locationX>902</locationX>
+        <locationY>74</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Welcome</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varInboundApplicationID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Application__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>updateappgoodscollection</name>
+        <label>updateappgoodscollection</label>
+        <locationX>569</locationX>
+        <locationY>436</locationY>
+        <connector>
+            <targetReference>More_Goods</targetReference>
+        </connector>
+        <inputReference>appgoodcollection</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>updateApplication</name>
+        <label>updateApplication</label>
+        <locationX>1613</locationX>
+        <locationY>205</locationY>
         <connector>
             <targetReference>asgnSupportDocsStg</targetReference>
         </connector>
@@ -402,25 +581,87 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>NewApplicationRecord.Id</elementReference>
+                <elementReference>varInboundApplicationID</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <inputAssignments>
+            <field>ABN__c</field>
+            <value>
+                <elementReference>ABN</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AHPRA_Number__c</field>
+            <value>
+                <elementReference>AHPRA_Number</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address__c</field>
+            <value>
+                <elementReference>Address</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email__c</field>
+            <value>
+                <elementReference>Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Medicare_Provider_Number__c</field>
+            <value>
+                <elementReference>Medicare_Provider_Number</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Phone_Number__c</field>
+            <value>
+                <elementReference>Phone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Practitioner_s_Name__c</field>
+            <value>
+                <elementReference>Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Professional_Association_Membership__c</field>
+            <value>
+                <elementReference>Professional_Association_Membership_Number</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Qualifications_and_Expertise__c</field>
+            <value>
+                <elementReference>Qualifications_and_Expertise</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Risk_Management_Strategy__c</field>
+            <value>
+                <elementReference>RiskManagementStrategy</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sites__c</field>
+            <value>
+                <elementReference>Sites</elementReference>
+            </value>
+        </inputAssignments>
         <object>Application__c</object>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Name</queriedFields>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
+    </recordUpdates>
     <screens>
         <name>Append_Product_Information</name>
         <label>Attach Product Information Docs</label>
-        <locationX>567</locationX>
-        <locationY>681</locationY>
+        <locationX>987</locationX>
+        <locationY>693</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>More_Goods_Heading</targetReference>
+            <targetReference>Create_New_App_Good</targetReference>
         </connector>
         <fields>
             <name>scrheader5</name>
@@ -469,7 +710,7 @@
             <inputParameters>
                 <name>recordId</name>
                 <value>
-                    <elementReference>NewApplicationRecord.Id</elementReference>
+                    <elementReference>varInboundApplicationID</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -481,13 +722,13 @@
     <screens>
         <name>confirm</name>
         <label>Confirm Details Screen</label>
-        <locationX>981</locationX>
-        <locationY>76</locationY>
+        <locationX>1496</locationX>
+        <locationY>73</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Application_Record</targetReference>
+            <targetReference>updateApplication</targetReference>
         </connector>
         <fields>
             <name>confirmlogo</name>
@@ -526,23 +767,23 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>More_Goods_Heading</name>
-        <label>Add More Goods to this Application?</label>
-        <locationX>902</locationX>
-        <locationY>681</locationY>
+        <name>loopscr</name>
+        <label>UPDproduct</label>
+        <locationX>314</locationX>
+        <locationY>272</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
-            <targetReference>Add_Another_Good</targetReference>
+            <targetReference>setIndications</targetReference>
         </connector>
         <fields>
-            <name>scrheader6</name>
+            <name>niimlogo1</name>
             <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>progressaddmoregoods</name>
+            <name>PIupdate</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
@@ -558,50 +799,105 @@
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
-            <name>Add_More_Goods2</name>
-            <fieldText>&lt;p&gt;Add More Goods? &lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Yes</name>
-            <dataType>Boolean</dataType>
+            <name>UPDProduct_Trade_Name</name>
+            <dataType>String</dataType>
             <defaultValue>
-                <booleanValue>false</booleanValue>
+                <elementReference>myloop.Product_Trade_Name__c</elementReference>
             </defaultValue>
-            <fieldText>Yes</fieldText>
+            <fieldText>Product Trade Name</fieldText>
             <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
+            <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>No</name>
-            <dataType>Boolean</dataType>
-            <fieldText>No</fieldText>
+            <name>UPDProduct_Company</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>myloop.Product_Company__c</elementReference>
+            </defaultValue>
+            <fieldText>Product Company</fieldText>
             <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDActive_Ingredient_s_And_Concentrations</name>
+            <defaultValue>
+                <stringValue>{!myloop.Active_Ingredients_Concentrations__c}</stringValue>
+            </defaultValue>
+            <fieldText>Active Ingredient(s) And Concentrations</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDDosage_Form</name>
+            <defaultValue>
+                <stringValue>{!myloop.Dosage_Form__c}</stringValue>
+            </defaultValue>
+            <fieldText>Dosage Form</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDDosage</name>
+            <defaultValue>
+                <stringValue>{!myloop.Dosage__c}</stringValue>
+            </defaultValue>
+            <fieldText>Dosage</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPD_Clinical_Justification</name>
+            <defaultValue>
+                <stringValue>{!myloop.Clinical_Justification__c}</stringValue>
+            </defaultValue>
+            <fieldText>Clinical Justification</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDSponsor_Company_From_Whom_You_Will_Obtain_The_Unapproved_Good</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>myloop.Sponsor__c</elementReference>
+            </defaultValue>
+            <fieldText>Sponsor (Company From Whom You Will Obtain The Unapproved Good)</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDIs_this_Good_approved_for_use_in_other_Jurisdictions</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>myloop.Approved_In_Other_Jurisdiction__c</elementReference>
+            </defaultValue>
+            <fieldText>Is this Good approved for use in other Jurisdictions</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Supporting_Documents</name>
-        <label>Add Supporting Documents Screen</label>
-        <locationX>486</locationX>
-        <locationY>264</locationY>
-        <allowBack>false</allowBack>
+        <name>loopscr2</name>
+        <label>UPDTreatment</label>
+        <locationX>50</locationX>
+        <locationY>272</locationY>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
+        <allowPause>true</allowPause>
         <connector>
-            <targetReference>asgnGoodIndsStg</targetReference>
+            <targetReference>assignupdates</targetReference>
         </connector>
         <fields>
-            <name>scrheader3</name>
-            <fieldText>&lt;p&gt;{!niimlogo}{!get_ApplicationRecord.Name}&lt;/p&gt;</fieldText>
+            <name>niimlogo3</name>
+            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>PISupportingDocs</name>
+            <name>PIupdate2</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
@@ -617,42 +913,127 @@
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
-            <name>Section_1B</name>
-            <fieldText>&lt;p&gt;Your application has been successfully saved. Please note your reference : &lt;b style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;{!get_ApplicationRecord.Name}.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please upload your supporting documents.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Minimum Of Three TGA-SAS-B Approval Letters.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt; Supporting Evidence Including Certificates Of Attendance Or Completion Of A Continuing Professional Education Course/Activity.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Informed Consent Form (Which Will Be Signed By Patients)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <name>UPDOther_Clinical_Indications_Notes</name>
+            <defaultValue>
+                <stringValue>{!myloop.App_Good_Indications_Description__c}</stringValue>
+            </defaultValue>
+            <fieldText>Other Clinical Indications Notes</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDSeriousness_of_the_medical_condition_s_for_which_the_good_will_be_used</name>
+            <defaultValue>
+                <stringValue>{!myloop.Seriousness__c}</stringValue>
+            </defaultValue>
+            <fieldText>Seriousness of the medical condition(s) for which the good will be used</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDDosage_Range</name>
+            <defaultValue>
+                <stringValue>{!myloop.Dosage_Range__c}</stringValue>
+            </defaultValue>
+            <fieldText>Dosage Range</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDExpected_Duration_of_Treatment</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>myloop.Expected_Duration_Of_Treatment__c</elementReference>
+            </defaultValue>
+            <fieldText>Expected Duration of Treatment</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDClinical_justification_for_using_the_unapproved_good</name>
+            <defaultValue>
+                <stringValue>{!myloop.Clinical_Justification__c}</stringValue>
+            </defaultValue>
+            <fieldText>Clinical justification for using the unapproved good.</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDIs_there_an_approved_Good_for_the_same_indication</name>
+            <defaultValue>
+                <stringValue>{!myloop.Approved_Good_Alternative__c}</stringValue>
+            </defaultValue>
+            <fieldText>Is there an approved Good for the same indication?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDHave_you_already_or_will_you_attempt_to_use_the_approved_good_prior</name>
+            <defaultValue>
+                <stringValue>{!myloop.Tried_Will_Try_Approved_Alternative__c}</stringValue>
+            </defaultValue>
+            <fieldText>Have you already or will you attempt to use the approved good prior to supplying the unapproved good?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>UPDWhy_is_the_approved_good_inappropriate_or_unsuitable_for_use</name>
+            <defaultValue>
+                <stringValue>{!myloop.Justification_Not_Using_Alternative__c}</stringValue>
+            </defaultValue>
+            <fieldText>Why is the approved good inappropriate or unsuitable for use?</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>More_Goods</name>
+        <label>More Goods</label>
+        <locationX>781</locationX>
+        <locationY>494</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>WantToAddMoreGoods</targetReference>
+        </connector>
+        <fields>
+            <name>niimlogo4</name>
+            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>File_Upload</name>
-            <extensionName>forceContent:fileUpload</extensionName>
+            <name>PIcontinue</name>
+            <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>label</name>
+                <name>currentStage</name>
                 <value>
-                    <stringValue>Upload Files</stringValue>
+                    <elementReference>$Flow.CurrentStage</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>recordId</name>
+                <name>stages</name>
                 <value>
-                    <elementReference>NewApplicationRecord.Id</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>contentDocIds</name>
-                <value>
-                    <elementReference>File_Upload.contentDocIds</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>disabled</name>
-                <value>
-                    <booleanValue>false</booleanValue>
+                    <elementReference>$Flow.ActiveStages</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>radiodecide</name>
+            <choiceReferences>YesMore</choiceReferences>
+            <choiceReferences>AddNomoregoods</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Add more Goods to this application??</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -660,8 +1041,8 @@
     <screens>
         <name>Thankyou_Page</name>
         <label>Thankyou</label>
-        <locationX>1479</locationX>
-        <locationY>423</locationY>
+        <locationX>1717</locationX>
+        <locationY>485</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -699,8 +1080,8 @@
     <screens>
         <name>The_Prescriber</name>
         <label>Prescriber Entry Screen</label>
-        <locationX>712</locationX>
-        <locationY>76</locationY>
+        <locationX>1374</locationX>
+        <locationY>74</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -738,6 +1119,9 @@
         <fields>
             <name>Name</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.Practitioner_s_Name__c</elementReference>
+            </defaultValue>
             <fieldText>Name</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -745,6 +1129,9 @@
         <fields>
             <name>AHPRA_Number</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.AHPRA_Number__c</elementReference>
+            </defaultValue>
             <fieldText>AHPRA Number</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -756,6 +1143,9 @@
         <fields>
             <name>Medicare_Provider_Number</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.Medicare_Provider_Number__c</elementReference>
+            </defaultValue>
             <fieldText>Medicare Provider Number</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -763,6 +1153,9 @@
         <fields>
             <name>Professional_Association_Membership_Number</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.Professional_Association_Membership__c</elementReference>
+            </defaultValue>
             <fieldText>Professional Association Membership Number</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -770,6 +1163,9 @@
         <fields>
             <name>ABN</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.ABN__c</elementReference>
+            </defaultValue>
             <fieldText>ABN</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -777,6 +1173,9 @@
         <fields>
             <name>Address</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.Address__c</elementReference>
+            </defaultValue>
             <fieldText>Address</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -784,6 +1183,9 @@
         <fields>
             <name>Phone</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.Phone_Number__c</elementReference>
+            </defaultValue>
             <fieldText>Phone</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -791,6 +1193,9 @@
         <fields>
             <name>Email</name>
             <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>getApplication.Email__c</elementReference>
+            </defaultValue>
             <fieldText>Email</fieldText>
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
@@ -800,19 +1205,28 @@
             </validationRule>
         </fields>
         <fields>
-            <name>Sites</name>
-            <fieldText>Sites At Which The Unapproved Good Will Be Prescribed (List All Addresses)</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
             <name>Qualifications_and_Expertise</name>
+            <defaultValue>
+                <stringValue>{!getApplication.Qualifications_and_Expertise__c}</stringValue>
+            </defaultValue>
             <fieldText>Qualifications and Expertise</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
         </fields>
         <fields>
+            <name>Sites</name>
+            <defaultValue>
+                <stringValue>{!getApplication.Sites__c}</stringValue>
+            </defaultValue>
+            <fieldText>Sites At Which The Unapproved Good Will Be Prescribed (List All Addresses)</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
             <name>RiskManagementStrategy</name>
+            <defaultValue>
+                <stringValue>{!getApplication.Risk_Management_Strategy__c}</stringValue>
+            </defaultValue>
             <fieldText>Risk Management</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <helpText>&lt;p&gt;How will risks associated with the use of the unapproved good by managed? This should address:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Process of obtaining informed consent from patient.&lt;/li&gt;&lt;li&gt;Monitoring and reporting that will be undertaken (include details of interval and duration of monitoring)&lt;/li&gt;&lt;li&gt;Process of investigating   and reporting adverse   events&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;i&gt;Please append &lt;/i&gt;&lt;b&gt;&lt;i&gt;Informed Consent Form&lt;/i&gt;&lt;/b&gt;&lt;i&gt; (which will be signed by patients).&lt;/i&gt;&lt;/p&gt;</helpText>
@@ -824,13 +1238,13 @@
     <screens>
         <name>The_Unapproved_Goods_1</name>
         <label>Unapproved Good Entry Screen1</label>
-        <locationX>327</locationX>
-        <locationY>419</locationY>
+        <locationX>1148</locationX>
+        <locationY>547</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Set_Indications_and_Dosages</targetReference>
+            <targetReference>Unapproved_Goods_Screen2</targetReference>
         </connector>
         <fields>
             <name>scrheader4</name>
@@ -912,13 +1326,13 @@
     <screens>
         <name>Unapproved_Goods_Screen2</name>
         <label>Unapproved Goods Screen2</label>
-        <locationX>217</locationX>
-        <locationY>593</locationY>
+        <locationX>1143</locationX>
+        <locationY>691</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_New_App_Good</targetReference>
+            <targetReference>Append_Product_Information</targetReference>
         </connector>
         <fields>
             <name>niimlogo2</name>
@@ -1011,8 +1425,8 @@
     <screens>
         <name>Welcome</name>
         <label>Welcome</label>
-        <locationX>433</locationX>
-        <locationY>76</locationY>
+        <locationX>1101</locationX>
+        <locationY>73</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1044,52 +1458,8 @@
         </fields>
         <fields>
             <name>Welcome_Text</name>
-            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Welcome to the application for registration to prescribe medicinal cannabis. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;To proceed, please confirm you have the following items ready (they will be necessary to complete the process):&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Update medicinal cannabis prescription application:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt; &lt;/span&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt; {!getApplication.Name}. &lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Checklist1</name>
-            <dataType>Boolean</dataType>
-            <fieldText>A Minimum Of Three TGA-SAS-B Approval Letters</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
-            <validationRule>
-                <errorMessage>&lt;p&gt;Please confirm that you have the items ready before proceeding&lt;/p&gt;</errorMessage>
-                <formulaExpression>IF({!Checklist1}=TRUE,TRUE,FALSE)</formulaExpression>
-            </validationRule>
-        </fields>
-        <fields>
-            <name>Checklist2</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Any Supporting Evidence Including Certificates Of Attendance Or Completion Of A Continuing Professional Education Course/Activity</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
-            <validationRule>
-                <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Please confirm that you have the items ready before proceeding&lt;/span&gt;&lt;/p&gt;</errorMessage>
-                <formulaExpression>IF({!Checklist2}=TRUE,TRUE,FALSE)</formulaExpression>
-            </validationRule>
-        </fields>
-        <fields>
-            <name>Checklist3</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Informed Consent Form To Be Signed By Patients</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
-            <validationRule>
-                <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Please confirm that you have the items ready before proceeding&lt;/span&gt;&lt;/p&gt;</errorMessage>
-                <formulaExpression>IF({!Checklist3}=TRUE,TRUE,FALSE)</formulaExpression>
-            </validationRule>
-        </fields>
-        <fields>
-            <name>Checklist4</name>
-            <dataType>Boolean</dataType>
-            <fieldText>Product Information For The Goods You Are Planning To Prescribe</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>true</isRequired>
-            <validationRule>
-                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Please confirm that you have the items ready before proceeding&lt;/span&gt;&lt;/p&gt;</errorMessage>
-                <formulaExpression>IF({!Checklist4}=TRUE,TRUE,FALSE)</formulaExpression>
-            </validationRule>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -1143,18 +1513,34 @@
         <stageOrder>20</stageOrder>
     </stages>
     <start>
-        <locationX>49</locationX>
+        <locationX>543</locationX>
         <locationY>57</locationY>
         <connector>
-            <targetReference>Welcome</targetReference>
+            <targetReference>getApplication</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <subflows>
+        <name>Files_List</name>
+        <label>Files List</label>
+        <locationX>1013</locationX>
+        <locationY>204</locationY>
+        <connector>
+            <targetReference>getAppGoods</targetReference>
+        </connector>
+        <flowName>NIIM_Application_Files_List_Subflow</flowName>
+        <inputAssignments>
+            <name>inboundApplicationId</name>
+            <value>
+                <elementReference>varInboundApplicationID</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
     <subflows>
         <name>NIIM_Declaration</name>
         <label>NIIM Declaration</label>
-        <locationX>1177</locationX>
-        <locationY>423</locationY>
+        <locationX>1463</locationX>
+        <locationY>485</locationY>
         <connector>
             <targetReference>asgnCompleteStg</targetReference>
         </connector>
@@ -1162,20 +1548,41 @@
         <inputAssignments>
             <name>varApplicationId</name>
             <value>
-                <elementReference>NewApplicationRecord.Id</elementReference>
+                <elementReference>varInboundApplicationID</elementReference>
             </value>
         </inputAssignments>
     </subflows>
     <textTemplates>
         <name>confirminput</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Name}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;AHPRA No&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!AHPRA_Number}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Medicare Provider No&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Medicare_Provider_Number}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prof. Membership No&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Professional_Association_Membership_Number}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;ABN&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!ABN}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Email&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Email}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Phone&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Phone}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Address&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Address}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Sites&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;{!Sites}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Qualifications and Expertise&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;{!Qualifications_and_Expertise}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Risk Management Strategy&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!RiskManagementStrategy}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!getApplication.Name}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;AHPRA No&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;{!AHPRA_Number}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Medicare Provider No&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Medicare_Provider_Number}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prof. Membership No&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Professional_Association_Membership_Number}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;ABN&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!ABN}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Email&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Email}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Phone&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;{!Phone}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Address&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Address}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Sites&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Sites}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;color: rgb(62, 62, 60); background-color: rgb(255, 255, 255);&quot;&gt;Qualifications and Expertise&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!Qualifications_and_Expertise}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Risk Management Strategy&lt;/b&gt;&lt;/p&gt;&lt;p&gt;{!RiskManagementStrategy}&lt;/p&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>niimlogo</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
         <text>&lt;p&gt;&lt;img src=&quot;https://niim--c.ap11.content.force.com/sfc/servlet.shepherd/version/download/0682s000003fmD0?asPdf=false&amp;amp;operationContext=CHATTER&quot;&gt;&lt;/p&gt;</text>
     </textTemplates>
+    <textTemplates>
+        <name>TEMPLATE</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Goods&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>appgoodcollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>App_Good__c</objectType>
+    </variables>
+    <variables>
+        <name>appgoodrecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>App_Good__c</objectType>
+    </variables>
     <variables>
         <name>CreateNewApplication</name>
         <dataType>SObject</dataType>
@@ -1183,6 +1590,14 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Application__c</objectType>
+    </variables>
+    <variables>
+        <name>cv</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContentVersion</objectType>
     </variables>
     <variables>
         <name>File_Upload_ID</name>
@@ -1197,6 +1612,21 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>invocablelosttestvar</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>myreccollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>App_Good__c</objectType>
     </variables>
     <variables>
         <name>NewAppGood</name>
@@ -1221,5 +1651,22 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Good__c</objectType>
+    </variables>
+    <variables>
+        <name>output</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varInboundApplicationID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>a1d0l000000rDGhAAM</stringValue>
+        </value>
     </variables>
 </Flow>

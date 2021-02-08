@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Generate_declaration</name>
+        <label>Generate declaration</label>
+        <locationX>449</locationX>
+        <locationY>258</locationY>
+        <actionName>InvocableNIIMGenerateDeclaration</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>asgnGoodIndsStg</targetReference>
+        </connector>
+        <inputParameters>
+            <name>applicationId</name>
+            <value>
+                <elementReference>NewApplicationRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>email</name>
+            <value>
+                <stringValue>burnside.mike@gmail.com</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
     <apiVersion>50.0</apiVersion>
     <assignments>
         <name>asgnCompleteStg</name>
@@ -391,8 +415,8 @@
     <recordLookups>
         <name>get_ApplicationRecord</name>
         <label>Get new Application&apos;s ref no.</label>
-        <locationX>838</locationX>
-        <locationY>264</locationY>
+        <locationX>876</locationX>
+        <locationY>316</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>asgnSupportDocsStg</targetReference>
@@ -587,13 +611,13 @@
     <screens>
         <name>Supporting_Documents</name>
         <label>Add Supporting Documents Screen</label>
-        <locationX>486</locationX>
+        <locationX>550</locationX>
         <locationY>264</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>asgnGoodIndsStg</targetReference>
+            <targetReference>Generate_declaration</targetReference>
         </connector>
         <fields>
             <name>scrheader3</name>

@@ -1,12 +1,18 @@
-<apex:page standardcontroller="Application__c" >
+<apex:page standardcontroller="Application__c" renderAs="pdf" >
   <!-- Begin Default Content REMOVE THIS -->
-  <h1>NIIM< Application to Prescribe Medicinal Cannabis</h1>
+  
+  
+    <h1> NIIM Application to prescribe medicinal cannabis</h1><br/><br/>
+     
+    Application: {!Application__c.name}<br/><br/> <br/>
+
+     
+    I agree to the terms and conditions.  <br/><br/> <br/>
+    
+    
+    Signed: _____________________         <br/> <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Application__c.Practitioner_s_Name__c}
+   
 
 
-<p>Application: {!application__c.name} </p>
- 
- <p> {!application__c.Practitioner_s_name__c} </p>
-
-
-  <!-- End Default Content REMOVE THIS -->
 </apex:page>
