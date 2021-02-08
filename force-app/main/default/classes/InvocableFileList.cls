@@ -1,7 +1,7 @@
 global with sharing class InvocableFileList {
     @InvocableMethod(
       label='NIIM Invocable File List '
-      description='Invocable File List '
+      description='Create a list of file attachments for a Application '
     ) 
     public static List<List<contentversion>> doAction(Request[] requests) {
       // Process requests
