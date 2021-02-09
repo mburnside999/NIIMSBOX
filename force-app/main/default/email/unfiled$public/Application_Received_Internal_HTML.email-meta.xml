@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>NIIM_Letterhead</letterhead>
+    <name>Application Received (Internal) HTML</name>
+    <style>freeForm</style>
+    <subject>Application Received</subject>
+    <textOnly>Dear {!User.FirstName}, just to let you know that the following application for registration to prescribe medicinal cannabis was recently received from our NIIM portal.
+
+All documentation related to this application is now available online.
+
+
+Application
+---------------
+
+Our reference: {!Application__c.Name}
+Created: {!Application__c.CreatedDate}
+Status: {!Application__c.Status__c}
+
+Practitioner
+----------------
+Practitioner: {!Application__c.Practitioner_s_Name__c}
+Address: {!Application__c.Address__c}
+Provider: {!Application__c.Medicare_Provider_Number__c}
+AHPRA: {!Application__c.AHPRA_Number__c}
+
+
+This application was submitted By: {!Application__c.OwnerFullName}
+
+
+What do I do now?
+-------------------------
+
+To review the application details, including the specific unapproved goods please follow this link:  {!Application__c.Link}
+
+
+
+Best regards,
+The NIIM Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
