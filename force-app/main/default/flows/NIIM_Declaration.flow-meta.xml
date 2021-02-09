@@ -125,11 +125,6 @@
             <targetReference>updateApp</targetReference>
         </connector>
         <fields>
-            <name>logo</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>pideclaration</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>

@@ -4,6 +4,7 @@
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
     <label>Applied To Other HREC In Past 12 Months</label>
+    <trackFeedHistory>true</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

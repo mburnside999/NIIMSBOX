@@ -3,13 +3,10 @@
     <actionCalls>
         <name>Generate_declaration</name>
         <label>Generate declaration</label>
-        <locationX>449</locationX>
-        <locationY>258</locationY>
+        <locationX>151</locationX>
+        <locationY>222</locationY>
         <actionName>InvocableNIIMGenerateDeclaration</actionName>
         <actionType>apex</actionType>
-        <connector>
-            <targetReference>asgnGoodIndsStg</targetReference>
-        </connector>
         <inputParameters>
             <name>applicationId</name>
             <value>
@@ -447,11 +444,6 @@
             <targetReference>More_Goods_Heading</targetReference>
         </connector>
         <fields>
-            <name>scrheader5</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>progresspropducts</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -514,11 +506,6 @@
             <targetReference>Create_Application_Record</targetReference>
         </connector>
         <fields>
-            <name>confirmlogo</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>PIconfirmandsubmit</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -560,11 +547,6 @@
         <connector>
             <targetReference>Add_Another_Good</targetReference>
         </connector>
-        <fields>
-            <name>scrheader6</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>progressaddmoregoods</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -617,11 +599,11 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Generate_declaration</targetReference>
+            <targetReference>asgnGoodIndsStg</targetReference>
         </connector>
         <fields>
             <name>scrheader3</name>
-            <fieldText>&lt;p&gt;{!niimlogo}{!get_ApplicationRecord.Name}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;{!get_ApplicationRecord.Name}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -690,11 +672,6 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>scrheader8</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>PICompleted</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -731,11 +708,6 @@
         <connector>
             <targetReference>confirm</targetReference>
         </connector>
-        <fields>
-            <name>scrheader2</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIprescriber</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -857,11 +829,6 @@
             <targetReference>Set_Indications_and_Dosages</targetReference>
         </connector>
         <fields>
-            <name>scrheader4</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>PIGoods_and_Indications</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -944,11 +911,6 @@
         <connector>
             <targetReference>Create_New_App_Good</targetReference>
         </connector>
-        <fields>
-            <name>niimlogo2</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIscreen2</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -1043,11 +1005,6 @@
         <connector>
             <targetReference>asgnPrescriberStg</targetReference>
         </connector>
-        <fields>
-            <name>scrheader</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIInitial</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
