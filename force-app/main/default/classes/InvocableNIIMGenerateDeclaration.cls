@@ -14,7 +14,7 @@ global with sharing class InvocableNIIMGenerateDeclaration{
 
 		//NIIMApplicationHelper.sendApplicationSummary(applicationId, email);
 
-		PageReference page = new PageReference('/apex/testpdf');
+		PageReference page = new PageReference('/apex/NIIMGenerateDeclarationVFPage');
 
 		page.getParameters().put('Id', applicationId);
 		// generate and PDF blob
