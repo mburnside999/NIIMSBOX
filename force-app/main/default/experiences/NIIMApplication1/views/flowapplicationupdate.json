@@ -26,7 +26,7 @@
       "regions" : [ {
         "components" : [ {
           "componentAttributes" : {
-            "flowArguments" : "[{\"label\":\"varInboundApplicationID\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!varInboundApplicationID}\"}]",
+            "flowArguments" : "[{\"label\":\"varApplicationId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!varApplicationId}\"}]",
             "flowLayout" : "oneColumn",
             "flowName" : "PROTOTYPE_UPDATE_Application"
           },
