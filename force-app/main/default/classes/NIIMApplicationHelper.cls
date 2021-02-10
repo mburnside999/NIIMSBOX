@@ -10,8 +10,14 @@ global class NIIMApplicationHelper{
 		message.setToAddresses(new List<String>{emailAddress});
 		//Dosage__c,
 		//Dosage_Form__c,
-		String htmlstr = '<H2>THIS IS AN APEX TEST RUN</H2><h3>Contains a custom information pack including attachments for a received Application</h3>';
-    List<Application__c> applications = [SELECT id, name, Medicare_Provider_Number__c, address__c, ABN__c, email__c, Phone_Number__c, Practitioner_s_Name__c, Sites__c, Applied_To_Other_HREC_In_Past_12_Months__c, Commercial_Interest__c, AHPRA_Number__c, Professional_Association_Membership__c, risk_management_strategy__c, status__c, Qualifications_and_Expertise__c,
+		String htmlstr = '<H2>Thankyou for your application.</H2><h3>Below is a summary of the information we received, including the attachments you provided.</h3>';
+		htmlstr+='<h3>Please also find attached a declaration that you will need to sign and upload.</h3>';
+		
+		htmlstr += '<p>You csn update your application at the following link</p>';
+
+		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowupdate?varInboundApplicationID='+applicationId+'</p>';
+		
+		List<Application__c> applications = [SELECT id, name, Medicare_Provider_Number__c, address__c, ABN__c, email__c, Phone_Number__c, Practitioner_s_Name__c, Sites__c, Applied_To_Other_HREC_In_Past_12_Months__c, Commercial_Interest__c, AHPRA_Number__c, Professional_Association_Membership__c, risk_management_strategy__c, status__c, Qualifications_and_Expertise__c,
      (SELECT id, name, App_Good_Indications__c, 
      App_Good_Indications_Description__c, 
      Approved_Good_Alternative__c, Approved_In_Other_Jurisdiction__c, Clinical_Justification__c, Dosage__c, Dosage_Form__c, Dosage_Range__c, Expected_Duration_Of_Treatment__c, Justification_Not_Using_Alternative__c, Product_Trade_Name__c, Product_Company__c, Sponsor__c, Seriousness__c, Tried_Will_Try_Approved_Alternative__c, 
