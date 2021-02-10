@@ -2,22 +2,6 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>50.0</apiVersion>
     <assignments>
-        <name>asgnCompleteStg</name>
-        <label>Set Complete Stage</label>
-        <locationX>1590</locationX>
-        <locationY>485</locationY>
-        <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Completed</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Thankyou_Page</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>asgnDeclarationStg</name>
         <label>Set Declaration Stage</label>
         <locationX>1310</locationX>
@@ -433,7 +417,7 @@
         <inputAssignments>
             <field>Application__c</field>
             <value>
-                <elementReference>varInboundApplicationID</elementReference>
+                <elementReference>varApplicationId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -530,7 +514,7 @@
             <field>Application__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varInboundApplicationID</elementReference>
+                <elementReference>varApplicationId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -551,7 +535,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varInboundApplicationID</elementReference>
+                <elementReference>varApplicationId</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -581,7 +565,7 @@
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>varInboundApplicationID</elementReference>
+                <elementReference>varApplicationId</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -664,11 +648,6 @@
             <targetReference>Create_New_App_Good</targetReference>
         </connector>
         <fields>
-            <name>scrheader5</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>progresspropducts</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -710,7 +689,7 @@
             <inputParameters>
                 <name>recordId</name>
                 <value>
-                    <elementReference>varInboundApplicationID</elementReference>
+                    <elementReference>varApplicationId</elementReference>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -730,11 +709,6 @@
         <connector>
             <targetReference>updateApplication</targetReference>
         </connector>
-        <fields>
-            <name>confirmlogo</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIconfirmandsubmit</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -777,11 +751,6 @@
         <connector>
             <targetReference>setIndications</targetReference>
         </connector>
-        <fields>
-            <name>niimlogo1</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIupdate</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -892,11 +861,6 @@
             <targetReference>assignupdates</targetReference>
         </connector>
         <fields>
-            <name>niimlogo3</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>PIupdate2</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -1003,11 +967,6 @@
             <targetReference>WantToAddMoreGoods</targetReference>
         </connector>
         <fields>
-            <name>niimlogo4</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>PIcontinue</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -1039,45 +998,6 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Thankyou_Page</name>
-        <label>Thankyou</label>
-        <locationX>1717</locationX>
-        <locationY>485</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>scrheader8</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>PICompleted</name>
-            <extensionName>dhfpi:lwcProgressIndicator</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>currentStage</name>
-                <value>
-                    <elementReference>$Flow.CurrentStage</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>stages</name>
-                <value>
-                    <elementReference>$Flow.ActiveStages</elementReference>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Thankyou</name>
-            <fieldText>&lt;p&gt;Thankyou for your application&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
         <name>The_Prescriber</name>
         <label>Prescriber Entry Screen</label>
         <locationX>1374</locationX>
@@ -1088,11 +1008,6 @@
         <connector>
             <targetReference>confirm</targetReference>
         </connector>
-        <fields>
-            <name>scrheader2</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIprescriber</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -1247,11 +1162,6 @@
             <targetReference>Unapproved_Goods_Screen2</targetReference>
         </connector>
         <fields>
-            <name>scrheader4</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>PIGoods_and_Indications</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -1334,11 +1244,6 @@
         <connector>
             <targetReference>Append_Product_Information</targetReference>
         </connector>
-        <fields>
-            <name>niimlogo2</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIscreen2</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -1425,7 +1330,7 @@
     <screens>
         <name>Welcome</name>
         <label>Welcome</label>
-        <locationX>1101</locationX>
+        <locationX>1102</locationX>
         <locationY>73</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1433,11 +1338,6 @@
         <connector>
             <targetReference>asgnPrescriberStg</targetReference>
         </connector>
-        <fields>
-            <name>scrheader</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
         <fields>
             <name>PIInitial</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -1458,7 +1358,7 @@
         </fields>
         <fields>
             <name>Welcome_Text</name>
-            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Update medicinal cannabis prescription application:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt; &lt;/span&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt; {!getApplication.Name}. &lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Update Application  &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt; &lt;/span&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt; {!getApplication.Name} &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 12px;&quot;&gt;The following screens will allow you to update your previous responses.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b style=&quot;font-size: 12px;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt; Press Next to continue.&lt;/b&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -1532,7 +1432,7 @@
         <inputAssignments>
             <name>inboundApplicationId</name>
             <value>
-                <elementReference>varInboundApplicationID</elementReference>
+                <elementReference>varApplicationId</elementReference>
             </value>
         </inputAssignments>
     </subflows>
@@ -1541,14 +1441,11 @@
         <label>NIIM Declaration</label>
         <locationX>1463</locationX>
         <locationY>485</locationY>
-        <connector>
-            <targetReference>asgnCompleteStg</targetReference>
-        </connector>
         <flowName>NIIM_Declaration</flowName>
         <inputAssignments>
             <name>varApplicationId</name>
             <value>
-                <elementReference>varInboundApplicationID</elementReference>
+                <elementReference>varApplicationId</elementReference>
             </value>
         </inputAssignments>
     </subflows>
@@ -1660,7 +1557,7 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>varInboundApplicationID</name>
+        <name>varApplicationId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
