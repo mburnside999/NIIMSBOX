@@ -83,8 +83,8 @@
     <recordUpdates>
         <name>updateApp</name>
         <label>updateApp</label>
-        <locationX>506</locationX>
-        <locationY>225</locationY>
+        <locationX>505</locationX>
+        <locationY>227</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -143,8 +143,8 @@
             <isRequired>true</isRequired>
         </fields>
         <fields>
-            <name>line1</name>
-            <fieldText>&lt;p&gt;a) I certify that I&lt;/p&gt;</fieldText>
+            <name>certtext</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Certification&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;a. I certify that I&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -152,6 +152,7 @@
             <choiceReferences>booleanHave</choiceReferences>
             <choiceReferences>booleanHaveNot</choiceReferences>
             <dataType>Boolean</dataType>
+            <defaultSelectedChoiceReference>booleanHaveNot</defaultSelectedChoiceReference>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -175,6 +176,7 @@
             <choiceReferences>boolanCommercialInterest</choiceReferences>
             <choiceReferences>booleanNoCommercialInterest</choiceReferences>
             <dataType>Boolean</dataType>
+            <defaultSelectedChoiceReference>booleanNoCommercialInterest</defaultSelectedChoiceReference>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -193,6 +195,42 @@
                     </rightValue>
                 </conditions>
             </visibilityRule>
+        </fields>
+        <fields>
+            <name>completethescan</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Signed Declaration&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;To complete your application please print and sign and scan the declaration we emailed to you.  Then use the button below to upload the scan.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>uploadsigneddeclaration</name>
+            <extensionName>forceContent:fileUpload</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>varApplicationId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Upload Signed Declaration</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>submittext</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Submit&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;...check the box&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>finalcheck</name>
+            <dataType>Boolean</dataType>
+            <fieldText>finalcheck</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
