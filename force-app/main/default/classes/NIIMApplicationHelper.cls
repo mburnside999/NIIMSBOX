@@ -13,11 +13,11 @@ global class NIIMApplicationHelper{
 		String htmlstr = '<H2>Thankyou for your application.</H2><h3>Below is a summary of the information we received, including the attachments you provided.</h3>';
 		htmlstr+='<h3>Please also find attached a declaration that you will need to sign and upload.</h3>';
 		
-		htmlstr += '<p>You can upload your declaration at the following link</p>';
+		htmlstr += '<p>You can upload your declaration to our secure portal at the following link</p>';
 
 		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowappdeclaration?varApplicationId='+applicationId+'</p>';
 		
-		htmlstr += '<p>You can update your application at the following link</p>';
+		htmlstr += '<p>You can update your application on our secure portal at the following link</p>';
 
 		
 		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowapplicationupdate?varInboundApplicationID='+applicationId+'</p>';
