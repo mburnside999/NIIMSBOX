@@ -13,10 +13,15 @@ global class NIIMApplicationHelper{
 		String htmlstr = '<H2>Thankyou for your application.</H2><h3>Below is a summary of the information we received, including the attachments you provided.</h3>';
 		htmlstr+='<h3>Please also find attached a declaration that you will need to sign and upload.</h3>';
 		
-		htmlstr += '<p>You csn update your application at the following link</p>';
+		htmlstr += '<p>You can upload your declaration at the following link</p>';
 
-		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowupdate?varInboundApplicationID='+applicationId+'</p>';
+		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowappdeclaration?varApplicationId='+applicationId+'</p>';
 		
+		htmlstr += '<p>You can update your application at the following link</p>';
+
+		
+		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowapplicationupdate?varInboundApplicationID='+applicationId+'</p>';
+
 		List<Application__c> applications = [SELECT id, name, Medicare_Provider_Number__c, address__c, ABN__c, email__c, Phone_Number__c, Practitioner_s_Name__c, Sites__c, Applied_To_Other_HREC_In_Past_12_Months__c, Commercial_Interest__c, AHPRA_Number__c, Professional_Association_Membership__c, risk_management_strategy__c, status__c, Qualifications_and_Expertise__c,
      (SELECT id, name, App_Good_Indications__c, 
      App_Good_Indications_Description__c, 
