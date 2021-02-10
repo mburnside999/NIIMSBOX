@@ -1,0 +1,10 @@
+{
+  "activeViewId" : "7b314ef6-11b6-43b1-9a3f-f95b89dd284b",
+  "appPageId" : "1572d814-c9b2-4f45-8903-204e2d866a16",
+  "id" : "f37b3532-185e-4de5-a9f0-640b53b8c387",
+  "label" : "Application List",
+  "objectApiName" : "Application__c",
+  "routeType" : "list-a1d",
+  "type" : "route",
+  "urlPrefix" : "application"
+}

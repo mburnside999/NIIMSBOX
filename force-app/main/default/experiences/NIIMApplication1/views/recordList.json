@@ -1,0 +1,45 @@
+{
+  "appPageId" : "1572d814-c9b2-4f45-8903-204e2d866a16",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "b6fbe8a8-9723-47a1-9418-e3fa0bc23671",
+  "label" : "Record List",
+  "regions" : [ {
+    "id" : "ba87a27c-2044-4a24-ac97-d1a0249ecd35",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "enableInlineEdit" : true,
+        "filterName" : "{!filterId}",
+        "layout" : "FULL",
+        "pageSize" : 25,
+        "scope" : "{!objectName}",
+        "showActionBar" : true,
+        "showChartsPanel" : true,
+        "showDisplay" : "showall",
+        "showFilterPanel" : true,
+        "showImageIcon" : true,
+        "showManualRefreshButton" : true,
+        "showObjectName" : true,
+        "showPinnedList" : true,
+        "showSearchBar" : true
+      },
+      "componentName" : "forceCommunity:objectHome",
+      "id" : "dc520fcb-38e0-4c3f-b4c6-124cd3bc4b7f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "84126060-8b90-42f2-9f11-ab8efb5584c9",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "d6c1d44c-895d-4c8e-a1f6-7d6ec33eb9a9",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "list"
+}

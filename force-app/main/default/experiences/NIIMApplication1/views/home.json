@@ -1,0 +1,73 @@
+{
+  "appPageId" : "1572d814-c9b2-4f45-8903-204e2d866a16",
+  "componentName" : "siteforce:sldsTwoCol84Layout",
+  "id" : "02221fd8-1bf3-4a41-b542-e1f6ff4819e6",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-size: 28px;\">Welcome to the NIIM Portal</span></p><p>&nbsp;</p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "64b1e350-0919-46fb-b9d6-5d205f7df2d9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "bannerBackgroundColor" : "rgb(67, 159, 200)",
+        "bannerPosition" : "top",
+        "bannerSizePercent" : 25,
+        "borderRadius" : 20,
+        "haveBanner" : false,
+        "iconBackgroundColor" : "rgba(241, 40, 40, 0)",
+        "iconSize" : "large",
+        "noImageColor" : "rgb(212, 212, 212)",
+        "overlay" : "rgba(0,0,0,0.01)",
+        "templateType" : "icon",
+        "tileMenuEditor" : "Default_Navigation4",
+        "titleColor" : "",
+        "titleFontSize" : "large",
+        "titleHorizontalAlign" : "center"
+      },
+      "componentName" : "community_navigation:tileMenu",
+      "id" : "07ea1820-7f7f-4f34-9ddd-6a7b58e3957d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "5acc5a3b-6a89-4908-92a2-46dbae4aecc5",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "94c704fb-f389-4e63-ab89-0a2a3a5b8804",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "6edb8368-851d-4daa-9f86-b28d4d465f72",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "9da8e933-46c7-43ce-b52c-3c07b72b2b74",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "bd065a0a-4582-4fb7-82cf-151f8be81823",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ed59a389-69d5-44bd-9ed7-77c3d2573743",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}
