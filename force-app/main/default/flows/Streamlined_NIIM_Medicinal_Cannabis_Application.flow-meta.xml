@@ -1176,7 +1176,7 @@
             <targetReference>Welcome</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
     <subflows>
         <name>NIIM_Declaration</name>
         <label>NIIM Declaration</label>
