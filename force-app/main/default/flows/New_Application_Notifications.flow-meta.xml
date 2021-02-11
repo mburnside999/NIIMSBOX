@@ -4,92 +4,19 @@
         <processMetadataValues>
             <name>emailAlertSelection</name>
             <value>
-                <stringValue>Notify_applicant</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>Notify Applicant</label>
-        <locationX>100</locationX>
-        <locationY>200</locationY>
-        <actionName>Application__c.Notify_applicant</actionName>
-        <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>myRule_1_A2</targetReference>
-        </connector>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <processMetadataValues>
-            <name>emailAlertSelection</name>
-            <value>
                 <stringValue>Notify_Internal_Users_About_Application</stringValue>
             </value>
         </processMetadataValues>
-        <name>myRule_1_A2</name>
+        <name>myRule_1_A1</name>
         <label>Notify Internal Users</label>
         <locationX>100</locationX>
-        <locationY>300</locationY>
+        <locationY>200</locationY>
         <actionName>Application__c.Notify_Internal_Users_About_Application</actionName>
         <actionType>emailAlert</actionType>
-        <connector>
-            <targetReference>myRule_1_A3</targetReference>
-        </connector>
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
                 <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <processMetadataValues>
-            <name>processSelection</name>
-            <value>
-                <stringValue>Application Approval - Application_Approval</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>selectionType</name>
-            <value>
-                <stringValue>selectedProcess</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>submitterType</name>
-            <value>
-                <stringValue>currentUser</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_1_A3</name>
-        <label>Submit For Approval</label>
-        <locationX>100</locationX>
-        <locationY>400</locationY>
-        <actionName>submit</actionName>
-        <actionType>submit</actionType>
-        <inputParameters>
-            <name>objectId</name>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>comment</name>
-        </inputParameters>
-        <inputParameters>
-            <name>processDefinitionNameOrId</name>
-            <value>
-                <stringValue>Application_Approval</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>skipEntryCriteria</name>
-            <value>
-                <booleanValue>false</booleanValue>
             </value>
         </inputParameters>
     </actionCalls>
@@ -122,13 +49,13 @@
             <label>Execute the actions when a new application is created</label>
         </rules>
     </decisions>
-    <description>This sends out notifications by email to the applicant and internal users that the application has been received. It also triggers the application approval process.</description>
+    <description>This sends out notifications by email to internal users that the application has been received.</description>
     <formulas>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
         <expression>true</expression>
     </formulas>
-    <interviewLabel>New_Application_Notifications-5_InterviewLabel</interviewLabel>
+    <interviewLabel>New_Application_Notifications-6_InterviewLabel</interviewLabel>
     <label>New Application Notifications And Approval</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -156,7 +83,7 @@
     </processMetadataValues>
     <processType>Workflow</processType>
     <startElementReference>myDecision</startElementReference>
-    <status>Obsolete</status>
+    <status>Active</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

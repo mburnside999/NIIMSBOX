@@ -23,16 +23,6 @@
                 <label>Submitted for Internal Review</label>
             </value>
             <value>
-                <fullName>Approved</fullName>
-                <default>false</default>
-                <label>Approved</label>
-            </value>
-            <value>
-                <fullName>Rejected</fullName>
-                <default>false</default>
-                <label>Rejected</label>
-            </value>
-            <value>
                 <fullName>Returned to Applicant</fullName>
                 <default>false</default>
                 <label>Returned to Applicant</label>
@@ -41,6 +31,16 @@
                 <fullName>Submitted to HREC</fullName>
                 <default>false</default>
                 <label>Submitted to HREC</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
             </value>
         </valueSetDefinition>
     </valueSet>
