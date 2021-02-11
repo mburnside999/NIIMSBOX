@@ -3,9 +3,33 @@
     <actionCalls>
         <name>Generate_declaration</name>
         <label>Generate declaration</label>
-        <locationX>942</locationX>
-        <locationY>446</locationY>
+        <locationX>840</locationX>
+        <locationY>452</locationY>
         <actionName>InvocableNIIMGenerateDeclaration</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_information_to_applicant</targetReference>
+        </connector>
+        <inputParameters>
+            <name>applicationId</name>
+            <value>
+                <elementReference>NewApplicationRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>email</name>
+            <value>
+                <elementReference>Email</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_information_to_applicant</name>
+        <label>Send information to applicant</label>
+        <locationX>993</locationX>
+        <locationY>542</locationY>
+        <actionName>InvocableNIIMApplicationEmailSender</actionName>
         <actionType>apex</actionType>
         <connector>
             <targetReference>asgnDeclarationStg</targetReference>
@@ -26,25 +50,9 @@
     </actionCalls>
     <apiVersion>50.0</apiVersion>
     <assignments>
-        <name>asgnCompleteStg</name>
-        <label>Set Complete Stage</label>
-        <locationX>1340</locationX>
-        <locationY>422</locationY>
-        <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Completed</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Thankyou_Page</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>asgnDeclarationStg</name>
         <label>Set Declaration Stage</label>
-        <locationX>1055</locationX>
+        <locationX>1097</locationX>
         <locationY>422</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
@@ -542,14 +550,11 @@
     <screens>
         <name>hdrentasnemail</name>
         <label>hdrsentanemail</label>
-        <locationX>1154</locationX>
-        <locationY>547</locationY>
+        <locationX>1195</locationX>
+        <locationY>632</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
-        <connector>
-            <targetReference>NIIM_Declaration</targetReference>
-        </connector>
         <fields>
             <name>PISentandEmail</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
@@ -571,7 +576,7 @@
         </fields>
         <fields>
             <name>check_your_email</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Check your email&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;We have sent a declaration to the email address you provided  ({!Email} ). This document needs to be scanned and signed by the applicant. &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Check your email&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;We have sent you a declaration to the email address you provided  ({!Email} ). You will find the declaration attached as a PDF fie. This document needs to be scanned and signed by the applicant. &lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -700,40 +705,6 @@
             </inputParameters>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <name>Thankyou_Page</name>
-        <label>Thankyou</label>
-        <locationX>1479</locationX>
-        <locationY>423</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>PICompleted</name>
-            <extensionName>dhfpi:lwcProgressIndicator</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>currentStage</name>
-                <value>
-                    <elementReference>$Flow.CurrentStage</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>stages</name>
-                <value>
-                    <elementReference>$Flow.ActiveStages</elementReference>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>Thankyou</name>
-            <fieldText>&lt;p&gt;Thankyou for your application&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -1129,7 +1100,7 @@
     </stages>
     <stages>
         <name>Completed</name>
-        <isActive>true</isActive>
+        <isActive>false</isActive>
         <label>Done</label>
         <stageOrder>100</stageOrder>
     </stages>
@@ -1176,23 +1147,7 @@
             <targetReference>Welcome</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
-    <subflows>
-        <name>NIIM_Declaration</name>
-        <label>NIIM Declaration</label>
-        <locationX>1177</locationX>
-        <locationY>423</locationY>
-        <connector>
-            <targetReference>asgnCompleteStg</targetReference>
-        </connector>
-        <flowName>NIIM_Declaration</flowName>
-        <inputAssignments>
-            <name>varApplicationId</name>
-            <value>
-                <elementReference>NewApplicationRecord.Id</elementReference>
-            </value>
-        </inputAssignments>
-    </subflows>
+    <status>Active</status>
     <textTemplates>
         <name>confirminput</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -1229,8 +1184,8 @@
         <name>NewAppGood</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
         <objectType>App_Good__c</objectType>
     </variables>
     <variables>

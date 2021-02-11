@@ -82,11 +82,6 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
-            <name>header</name>
-            <fieldText>&lt;p&gt;{!niimlogo}&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>PIfiles</name>
             <extensionName>dhfpi:lwcProgressIndicator</extensionName>
             <fieldType>ComponentInstance</fieldType>
@@ -104,6 +99,11 @@
             </inputParameters>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>prev</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Previous Attachments&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>displayfiles</name>

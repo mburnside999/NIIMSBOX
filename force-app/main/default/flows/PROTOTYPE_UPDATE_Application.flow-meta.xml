@@ -362,7 +362,7 @@
     <decisions>
         <name>WantToAddMoreGoods</name>
         <label>Want To Add More Goods?</label>
-        <locationX>899</locationX>
+        <locationX>953</locationX>
         <locationY>532</locationY>
         <defaultConnector>
             <targetReference>asgnDeclarationStg</targetReference>
@@ -699,7 +699,7 @@
         </fields>
         <fields>
             <name>Section_2B</name>
-            <fieldText>&lt;p&gt;Section 2B: Append Product Information&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Product Information&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please upload any relevant product information&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1015,7 +1015,6 @@
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
-            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <name>radiodecide</name>

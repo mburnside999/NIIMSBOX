@@ -24,8 +24,8 @@ global class NIIMApplicationHelper{
 		htmlstr += '<p>You can update your application on our secure portal at the following link</p>';
 
 		
-		//htmlstr+='<p>https://niimportal.force.com/NIIMApplication/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
-		//htmlstr+='<p>https://preprod-niimportal.cs114.force.com/NIIMApplication/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
+		//htmlstr+='<p>https://niimportal.force.com/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
+		//htmlstr+='<p>https://preprod-niimportal.cs114.force.com/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
 		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
 
 

@@ -21,7 +21,7 @@
         "borderRadius" : 20,
         "haveBanner" : false,
         "iconBackgroundColor" : "rgba(241, 40, 40, 0)",
-        "iconSize" : "large",
+        "iconSize" : "medium",
         "noImageColor" : "rgb(212, 212, 212)",
         "overlay" : "rgba(0,0,0,0.01)",
         "templateType" : "icon",
