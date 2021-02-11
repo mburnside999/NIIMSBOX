@@ -15,12 +15,19 @@ global class NIIMApplicationHelper{
 		
 		htmlstr += '<p>You can upload your declaration to our secure portal at the following link</p>';
 
-		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowappdeclaration?varApplicationId='+applicationId+'</p>';
-		
+		//htmlstr+='<p>https://niimportal.force.com/NIIMApplication/s/flowappdeclaration?varApplicationId='+applicationId+'</p>';
+		//htmlstr+='<p>https://preprod-niimportal.cs114.force.com/NIIMApplication/s/flowappdeclaration?varApplicationId='+applicationId+'</p>';
+		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
+
+
+
 		htmlstr += '<p>You can update your application on our secure portal at the following link</p>';
 
 		
+		//htmlstr+='<p>https://niimportal.force.com/NIIMApplication/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
+		//htmlstr+='<p>https://preprod-niimportal.cs114.force.com/NIIMApplication/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
 		htmlstr+='<p>https://mbdevp1-niimportal.cs58.force.com/NIIMApplication/s/flowapplicationupdate?varApplicationId='+applicationId+'</p>';
+
 
 		List<Application__c> applications = [SELECT id, name, Medicare_Provider_Number__c, address__c, ABN__c, email__c, Phone_Number__c, Practitioner_s_Name__c, Sites__c, Applied_To_Other_HREC_In_Past_12_Months__c, Commercial_Interest__c, AHPRA_Number__c, Professional_Association_Membership__c, risk_management_strategy__c, status__c, Qualifications_and_Expertise__c,
      (SELECT id, name, App_Good_Indications__c, 

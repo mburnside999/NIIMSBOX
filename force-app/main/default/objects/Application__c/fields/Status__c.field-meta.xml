@@ -18,9 +18,9 @@
                 <label>New</label>
             </value>
             <value>
-                <fullName>Pending</fullName>
+                <fullName>Submitted for Internal Review</fullName>
                 <default>false</default>
-                <label>Pending</label>
+                <label>Submitted for Internal Review</label>
             </value>
             <value>
                 <fullName>Approved</fullName>
@@ -31,6 +31,16 @@
                 <fullName>Rejected</fullName>
                 <default>false</default>
                 <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Returned to Applicant</fullName>
+                <default>false</default>
+                <label>Returned to Applicant</label>
+            </value>
+            <value>
+                <fullName>Submitted to HREC</fullName>
+                <default>false</default>
+                <label>Submitted to HREC</label>
             </value>
         </valueSetDefinition>
     </valueSet>

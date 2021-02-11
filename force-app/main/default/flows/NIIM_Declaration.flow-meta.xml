@@ -59,6 +59,87 @@
             <stringValue>false</stringValue>
         </value>
     </choices>
+    <choices>
+        <name>no_Dont_Submit</name>
+        <choiceText>No, I need more time</choiceText>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </choices>
+    <choices>
+        <name>No_submit</name>
+        <choiceText>No, I need more time</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>false</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes_Submit</name>
+        <choiceText>Yes, submit. my application</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>true</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>is_this_record_updateable</name>
+        <label>is this record updateable?</label>
+        <locationX>160</locationX>
+        <locationY>527</locationY>
+        <defaultConnector>
+            <targetReference>scrlocked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No its not updateable</defaultConnectorLabel>
+        <rules>
+            <name>Yes_updateable</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>getApplication.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>getApplication.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Returned to Applicant</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>scrcert_and_declaration</targetReference>
+            </connector>
+            <label>Yes updateable</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Submit_or_not</name>
+        <label>Submit the App?</label>
+        <locationX>705</locationX>
+        <locationY>407</locationY>
+        <defaultConnector>
+            <targetReference>moretimescr</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>More time needed</defaultConnectorLabel>
+        <rules>
+            <name>SubmitApp</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Would_you_like_to_submit_your_application</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>updateApp</targetReference>
+            </connector>
+            <label>Submit</label>
+        </rules>
+    </decisions>
     <interviewLabel>NIIM Declaration {!$Flow.CurrentDateTime}</interviewLabel>
     <label>NIIM Declaration</label>
     <processMetadataValues>
@@ -80,11 +161,35 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>getApplication</name>
+        <label>get the Application record</label>
+        <locationX>176</locationX>
+        <locationY>228</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>is_this_record_updateable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varApplicationId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Application__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>updateApp</name>
-        <label>updateApp</label>
-        <locationX>505</locationX>
-        <locationY>227</locationY>
+        <label>update Application fields and set status</label>
+        <locationX>904</locationX>
+        <locationY>403</locationY>
+        <connector>
+            <targetReference>scrthanks</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -111,36 +216,45 @@
                 <elementReference>booleanCommercialRadioButtons</elementReference>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Submitted for Internal Review</stringValue>
+            </value>
+        </inputAssignments>
         <object>Application__c</object>
     </recordUpdates>
     <screens>
-        <name>scr1</name>
-        <label>scr1</label>
-        <locationX>176</locationX>
-        <locationY>227</locationY>
+        <name>moretimescr</name>
+        <label>End, more time requersted</label>
+        <locationX>714</locationX>
+        <locationY>631</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>moretime</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;More Time Requested&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Your Application has not been submitted at this time.  &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>scrcert_and_declaration</name>
+        <label>Ask for certification and upload</label>
+        <locationX>324</locationX>
+        <locationY>306</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>updateApp</targetReference>
+            <targetReference>scrdubmit</targetReference>
         </connector>
         <fields>
-            <name>pideclaration</name>
-            <extensionName>dhfpi:lwcProgressIndicator</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>currentStage</name>
-                <value>
-                    <elementReference>$Flow.CurrentStage</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>stages</name>
-                <value>
-                    <elementReference>$Flow.ActiveStages</elementReference>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
+            <name>almostdone</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Almost done&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Application: {!getApplication.Name}&lt;/p&gt;&lt;p&gt;Practitioner: : {!getApplication.Practitioner_s_Name__c}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This is the final stage of  your application.   Please complete the certification sections below and upload your signed declaration.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
             <name>certtext</name>
@@ -152,7 +266,6 @@
             <choiceReferences>booleanHave</choiceReferences>
             <choiceReferences>booleanHaveNot</choiceReferences>
             <dataType>Boolean</dataType>
-            <defaultSelectedChoiceReference>booleanHaveNot</defaultSelectedChoiceReference>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -176,7 +289,6 @@
             <choiceReferences>boolanCommercialInterest</choiceReferences>
             <choiceReferences>booleanNoCommercialInterest</choiceReferences>
             <dataType>Boolean</dataType>
-            <defaultSelectedChoiceReference>booleanNoCommercialInterest</defaultSelectedChoiceReference>
             <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
         </fields>
@@ -220,17 +332,65 @@
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>scrdubmit</name>
+        <label>Make a submit decision</label>
+        <locationX>513</locationX>
+        <locationY>405</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Submit_or_not</targetReference>
+        </connector>
         <fields>
-            <name>submittext</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Submit&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;...check the box&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <name>submit</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Submit Application&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;On submission your application will be reviewed by the NIIM HREC team.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>finalcheck</name>
-            <dataType>Boolean</dataType>
-            <fieldText>finalcheck</fieldText>
-            <fieldType>InputField</fieldType>
+            <name>Would_you_like_to_submit_your_application</name>
+            <choiceReferences>Yes_Submit</choiceReferences>
+            <choiceReferences>No_submit</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Would you like to submit your application?</fieldText>
+            <fieldType>RadioButtons</fieldType>
             <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>scrlocked</name>
+        <label>End, the record is locked</label>
+        <locationX>436</locationX>
+        <locationY>581</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>sorry_currently_locked</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Application Locked&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Sorry, this application has already been submitted is  currently locked.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>scrthanks</name>
+        <label>Thanks &amp; End</label>
+        <locationX>1122</locationX>
+        <locationY>403</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>thanks</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Application Submitted.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Thankyou for submitting your application.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -239,7 +399,7 @@
         <locationX>50</locationX>
         <locationY>50</locationY>
         <connector>
-            <targetReference>scr1</targetReference>
+            <targetReference>getApplication</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -263,7 +423,7 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
-        <isOutput>false</isOutput>
+        <isOutput>true</isOutput>
         <value>
             <stringValue>a1d2s00000012C0AAI</stringValue>
         </value>
