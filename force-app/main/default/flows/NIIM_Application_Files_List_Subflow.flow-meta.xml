@@ -39,7 +39,7 @@
         </connector>
     </assignments>
     <interviewLabel>NIIM. Application Files List Subflow {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>NIIM. Application Files List Subflow</label>
+    <label>NIIM. Application Files List - Production</label>
     <loops>
         <name>cvloop</name>
         <label>cvloop</label>
