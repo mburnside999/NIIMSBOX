@@ -1,4 +1,8 @@
 global with sharing class InvocableNIIMApplicationEmailSender{
+/**
+ * @description invocable method to email an Application content pack to a specified email address
+ * @see NIIMApplicationHelper
+ */
 	@InvocableMethod(label = 
 	'NIIM Invocable Email Sender method'description = 
 	'NIIM invocable to send an info pack by email')

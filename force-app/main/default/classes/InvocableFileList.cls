@@ -1,4 +1,8 @@
 global with sharing class InvocableFileList{
+	
+/**
+ * @description invocable method to return all current attachments for an Application
+ */
 	@InvocableMethod(label = 
 	'NIIM Invocable File List 'description = 
 	'Invocable File List ')

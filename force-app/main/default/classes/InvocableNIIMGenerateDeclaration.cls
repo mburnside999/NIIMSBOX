@@ -1,4 +1,12 @@
 global with sharing class InvocableNIIMGenerateDeclaration{
+	
+/**
+ * @description invocable method to generate an Application declaration
+ * 
+ * Generation is performed using VisualForce page NIIMGenerateDeclarationVFPage
+ * 
+ */
+	
 	@InvocableMethod(label = 
 	'NIIM Invocable Declaration Generator'description = 
 	'NIIM invocable declaration generator')
@@ -12,6 +20,7 @@ global with sharing class InvocableNIIMGenerateDeclaration{
 		String email = requests[0].email;
 		String applicationId = requests[0].applicationId;
 
+		// DEPRECATED - we dont send via this class
 		//NIIMApplicationHelper.sendApplicationSummary(applicationId, email);
 
 		PageReference page = new PageReference('/apex/NIIMGenerateDeclarationVFPage');

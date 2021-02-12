@@ -1,6 +1,6 @@
 global class NIIMApplicationHelper{
 	/**
-	 * Send out the startup object attachments to the specified email and save it as the activity
+	 * Send out the startup object attachments to the specified email 
 	 * @param {String} applicationId The Id of the Application__c
 	 * @param {String} emailAddress The email address of the recipient
 	 */
