@@ -24,6 +24,8 @@ global with sharing class InvocableNIIMApplicationEmailSender{
 		global Id applicationId;
 		@InvocableVariable
 		global String email;
+		
+
 
 	}
 }

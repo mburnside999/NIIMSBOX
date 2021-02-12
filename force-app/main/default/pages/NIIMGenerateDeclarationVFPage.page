@@ -1,18 +1,33 @@
 <apex:page standardcontroller="Application__c" renderAs="pdf" >
   <!-- Begin Default Content REMOVE THIS -->
   
-  
-    <h1> NIIM Application to prescribe medicinal cannabis</h1><br/><br/>
+  <apex:image url="{!$Resource.NIIMLOGO}"/>
+
+    <h1> NIIM AUTHORISED PRESCRIBER SCHEME</h1><br/><br/>
      
-    Application: {!Application__c.name}<br/><br/> <br/>
+    <b>Application Reference:</b> {!Application__c.name}<br/><br/>
+    <b>Created: </b>  <apex:outputField value="{!Application__C.CreatedDate}"> </apex:outputfield><br/><br/>
+    <b>Practitioner Name:</b> {!Application__c.Practitioner_s_Name__c}<br/><br/>
+    <b>Address:</b> {!Application__c.Address__c}<br/><br/>
+    <b>Provider No:</b>  {!Application__c.Medicare_Provider_Number__c}<br/><br/>
+
+    <br/><br/>
+
+ 
 
      
-    I agree to the terms and conditions.  <br/><br/> <br/>
-    
-    
-    Signed: _____________________         <br/> <br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Application__c.Practitioner_s_Name__c}
-   
+    I certify that the information I have provided in this application is true and accurate.
+    <br/><br/>
+    <br/><br/>
 
 
+    <br/><br/> <br/> 
+    
+    Date: _____________________         <br/> <br/><br/> 
+
+    Signed: _____________________         <br/> <br/><br/> 
+
+    Full Name: _____________________         
+            
+            
 </apex:page>
