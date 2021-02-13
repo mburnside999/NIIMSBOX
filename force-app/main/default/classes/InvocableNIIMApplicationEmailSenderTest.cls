@@ -7,7 +7,7 @@ public with sharing class InvocableNIIMApplicationEmailSenderTest{
 		App_Good__c ag = new App_Good__c(Product_Trade_Name__c = 'XXX', Application__c = a.Id);
 		insert ag;
 
-
+Test.startTest();
 		InvocableNIIMApplicationEmailSender.Requests argument;
 		argument = new InvocableNIIMApplicationEmailSender.Requests();
 		argument.email = 'burnside.mike@gmail.com';
@@ -15,6 +15,8 @@ public with sharing class InvocableNIIMApplicationEmailSenderTest{
 
 		List<String> teststr = new List<String>();
 		teststr = InvocableNIIMApplicationEmailSender.sender(new List<InvocableNIIMApplicationEmailSender.Requests>{argument});
+		
+		Test.stopTest();
 		System.assert(teststr[0] == 'Completed');
 
 		// InvocableNIIMApplicationEmailSender.Requests r = new InvocableNIIMApplicationEmailSender.Requests();

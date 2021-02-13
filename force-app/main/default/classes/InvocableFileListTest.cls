@@ -7,6 +7,8 @@ private class InvocableFileListTest{
 		App_Good__c ag = new App_Good__c(Product_Trade_Name__c = 'XXX', Application__c = a.Id);
 		insert ag;
 
+
+
 		String myFileContent = 'Mikes File upload content';
 
 		ContentVersion conVer = new ContentVersion();
@@ -26,6 +28,8 @@ private class InvocableFileListTest{
 		conDocLink.shareType = 'V';
 		insert conDocLink;
 
+		Test.startTest();
+
 		InvocableFileList.Request argument;
 		argument = new InvocableFileList.Request();
 		argument.recordId = a.id;
@@ -35,6 +39,7 @@ private class InvocableFileListTest{
 
 		result = InvocableFileList.doAction(new List<InvocableFileList.Request>{argument});
 
+		Test.stopTest();
 		System.assert(result.size() == 1);
 
 
