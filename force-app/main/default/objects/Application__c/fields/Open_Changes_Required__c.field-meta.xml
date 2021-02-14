@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Open_Concerns__c</fullName>
+    <fullName>Open_Changes_Required__c</fullName>
     <externalId>false</externalId>
-    <label>Open Concerns</label>
+    <label>Open Changes Required</label>
     <summaryFilterItems>
         <field>Changes_Required__c.Status__c</field>
         <operation>equals</operation>
