@@ -5,6 +5,11 @@
       "default": true
     }
   ],
+  "dependencies": [ 
+    {
+       "package": "04t1t0000034vZjAAI"
+    }
+ ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "50.0"
