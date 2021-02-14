@@ -17,21 +17,21 @@
           "UUID" : "39bda846-1f5b-4863-ac15-2b9269e60465",
           "columns" : [ {
             "UUID" : "ed28ea06-838e-4f9e-9f84-e81d9fde56ed",
-            "columnName" : "column 1",
             "columnKey" : "col1",
+            "columnName" : "column 1",
             "columnWidth" : "12",
             "seedComponents" : [ {
-              "fqn" : "forceCommunity:recordHeadline",
               "attributes" : {
                 "recordId" : "{!CurrentUser.accountId}",
                 "sfdc:identifier" : "forceCommunity_recordHeadline"
-              }
+              },
+              "fqn" : "forceCommunity:recordHeadline"
             }, {
-              "fqn" : "forceCommunity:recordHomeTabs",
               "attributes" : {
                 "recordId" : "{!CurrentUser.accountId}",
                 "sfdc:identifier" : "forceCommunity_recordHomeTabs"
-              }
+              },
+              "fqn" : "forceCommunity:recordHomeTabs"
             } ]
           } ]
         },

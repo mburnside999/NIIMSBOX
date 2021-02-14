@@ -1,8 +1,8 @@
 {
   "appPageId" : "1572d814-c9b2-4f45-8903-204e2d866a16",
   "componentName" : "siteforce:dynamicLayout",
-  "id" : "d79d726d-9c4a-42d2-bd06-65bf3fa339ce",
-  "label" : "FlowUpdate",
+  "id" : "531b5710-a75c-434f-97dd-a9e7a42ff0aa",
+  "label" : "testtest",
   "regions" : [ {
     "components" : [ {
       "componentAttributes" : {
@@ -10,9 +10,9 @@
         "backgroundOverlay" : "rgba(0,0,0,0.5)",
         "contentAreaWidth" : 100,
         "sectionConfig" : {
-          "UUID" : "98fbcb51-48d5-476b-9d37-40564e9b5c8e",
+          "UUID" : "faeb240d-2eab-4b8b-bcb7-73d9ca95e3dd",
           "columns" : [ {
-            "UUID" : "392516c5-1d40-43f1-94ae-fd5d8bb74db1",
+            "UUID" : "8a9ed1e9-0cd5-4020-a0de-0747cd0a6a43",
             "columnKey" : "1",
             "columnName" : "Column 1",
             "columnWidth" : "12",
@@ -22,21 +22,32 @@
         "sectionHeight" : 300
       },
       "componentName" : "forceCommunity:section",
-      "id" : "98fbcb51-48d5-476b-9d37-40564e9b5c8e",
+      "id" : "faeb240d-2eab-4b8b-bcb7-73d9ca95e3dd",
       "regions" : [ {
         "components" : [ {
           "componentAttributes" : {
-            "flowArguments" : "[{\"label\":\"varApplicationId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!varApplicationId}\"}]",
-            "flowLayout" : "oneColumn",
-            "flowName" : "NIIM_Declaration"
+            "enableInlineEdit" : false,
+            "filterName" : "00B0l000002UaXyEAK",
+            "layout" : "FULL",
+            "pageSize" : 25,
+            "scope" : "Application__c",
+            "showActionBar" : true,
+            "showChartsPanel" : true,
+            "showDisplay" : "showall",
+            "showFilterPanel" : true,
+            "showImageIcon" : true,
+            "showManualRefreshButton" : true,
+            "showObjectName" : true,
+            "showPinnedList" : true,
+            "showSearchBar" : true
           },
-          "componentName" : "forceCommunity:flowCommunity",
-          "id" : "94b96a67-d4b2-40de-b536-3431390e1733",
+          "componentName" : "forceCommunity:objectHome",
+          "id" : "f79d5a59-8424-42cd-955b-89014d1ec74e",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         } ],
-        "id" : "392516c5-1d40-43f1-94ae-fd5d8bb74db1",
+        "id" : "8a9ed1e9-0cd5-4020-a0de-0747cd0a6a43",
         "regionLabel" : "Column 1",
         "regionName" : "1",
         "renditionMap" : { },
@@ -46,7 +57,7 @@
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "bdaaceb2-6396-4a39-b363-d75860b24a9f",
+    "id" : "22ece23c-9665-44d0-94dd-e22ccb2d8199",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -54,18 +65,18 @@
       "componentAttributes" : {
         "description" : "",
         "metaTags" : "",
-        "title" : "FlowUpdate"
+        "title" : "testtest"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "20722e80-597e-4b26-a582-9475a387fe40",
+      "id" : "f4b30a59-b2a5-4e7c-89f3-c2d90238e85f",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "b42d55aa-4445-4e44-b741-fbb3fd471245",
+    "id" : "2aee9847-5100-44e5-8288-86b71fac0be2",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],
   "themeLayoutType" : "Inner",
   "type" : "view",
-  "viewType" : "custom-flowupdate"
+  "viewType" : "custom-testtest"
 }

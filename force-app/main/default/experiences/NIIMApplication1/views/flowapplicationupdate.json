@@ -13,8 +13,8 @@
           "UUID" : "c94cb89a-35a0-4a7a-9dcd-edfff0028870",
           "columns" : [ {
             "UUID" : "0388ef1d-e706-42d6-94b7-76a1f83a9198",
-            "columnName" : "Column 1",
             "columnKey" : "1",
+            "columnName" : "Column 1",
             "columnWidth" : "12",
             "seedComponents" : [ ]
           } ]

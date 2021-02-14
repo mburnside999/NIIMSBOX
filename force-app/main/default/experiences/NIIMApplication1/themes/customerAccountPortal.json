@@ -59,14 +59,14 @@
           "maxAutoCompleteResults" : 5,
           "searchLabel" : "Search...",
           "searchObjects" : [ {
-            "name" : "KnowledgeArticleVersion",
-            "isPublic" : true
+            "isPublic" : true,
+            "name" : "KnowledgeArticleVersion"
           }, {
-            "name" : "Case",
-            "isPublic" : false
+            "isPublic" : false,
+            "name" : "Case"
           }, {
-            "name" : "ContentDocument",
-            "isPublic" : true
+            "isPublic" : true,
+            "name" : "ContentDocument"
           } ]
         },
         "componentName" : "forceCommunity:globalSearchInput",

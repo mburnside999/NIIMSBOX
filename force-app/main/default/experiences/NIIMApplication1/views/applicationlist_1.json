@@ -1,8 +1,8 @@
 {
   "appPageId" : "1572d814-c9b2-4f45-8903-204e2d866a16",
   "componentName" : "siteforce:dynamicLayout",
-  "id" : "d79d726d-9c4a-42d2-bd06-65bf3fa339ce",
-  "label" : "FlowUpdate",
+  "id" : "594d7e1c-44c8-4c37-a451-092838c03b40",
+  "label" : "applicationlist",
   "regions" : [ {
     "components" : [ {
       "componentAttributes" : {
@@ -10,9 +10,9 @@
         "backgroundOverlay" : "rgba(0,0,0,0.5)",
         "contentAreaWidth" : 100,
         "sectionConfig" : {
-          "UUID" : "98fbcb51-48d5-476b-9d37-40564e9b5c8e",
+          "UUID" : "81a19486-30fc-4092-996a-f12db6d37bd6",
           "columns" : [ {
-            "UUID" : "392516c5-1d40-43f1-94ae-fd5d8bb74db1",
+            "UUID" : "2ea30d86-32bd-40a6-9316-4876dafef868",
             "columnKey" : "1",
             "columnName" : "Column 1",
             "columnWidth" : "12",
@@ -22,21 +22,17 @@
         "sectionHeight" : 300
       },
       "componentName" : "forceCommunity:section",
-      "id" : "98fbcb51-48d5-476b-9d37-40564e9b5c8e",
+      "id" : "81a19486-30fc-4092-996a-f12db6d37bd6",
       "regions" : [ {
         "components" : [ {
-          "componentAttributes" : {
-            "flowArguments" : "[{\"label\":\"varApplicationId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!varApplicationId}\"}]",
-            "flowLayout" : "oneColumn",
-            "flowName" : "NIIM_Declaration"
-          },
-          "componentName" : "forceCommunity:flowCommunity",
-          "id" : "94b96a67-d4b2-40de-b536-3431390e1733",
+          "componentAttributes" : { },
+          "componentName" : "c:niimapplicationlist",
+          "id" : "1e153c52-0eca-4354-bc16-d4565a2791a5",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         } ],
-        "id" : "392516c5-1d40-43f1-94ae-fd5d8bb74db1",
+        "id" : "2ea30d86-32bd-40a6-9316-4876dafef868",
         "regionLabel" : "Column 1",
         "regionName" : "1",
         "renditionMap" : { },
@@ -46,7 +42,7 @@
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "bdaaceb2-6396-4a39-b363-d75860b24a9f",
+    "id" : "2221753d-b267-42c1-8f06-5b26bd8ace29",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -54,18 +50,18 @@
       "componentAttributes" : {
         "description" : "",
         "metaTags" : "",
-        "title" : "FlowUpdate"
+        "title" : "applicationlist"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "20722e80-597e-4b26-a582-9475a387fe40",
+      "id" : "81036fb9-c219-498c-8b48-41e47341d3b9",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "b42d55aa-4445-4e44-b741-fbb3fd471245",
+    "id" : "0ea9f7c3-837e-4659-a8e0-493a40a425d8",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],
   "themeLayoutType" : "Inner",
   "type" : "view",
-  "viewType" : "custom-flowupdate"
+  "viewType" : "custom-applicationlist"
 }

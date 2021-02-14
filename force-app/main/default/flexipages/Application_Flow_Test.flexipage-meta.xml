@@ -16,6 +16,11 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>niimapplicationlist</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>enableInlineEdit</name>
                     <value>true</value>

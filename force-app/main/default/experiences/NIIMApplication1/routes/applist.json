@@ -1,0 +1,10 @@
+{
+  "activeViewId" : "37ac287c-9912-476d-8ab5-fc6852845b48",
+  "appPageId" : "1572d814-c9b2-4f45-8903-204e2d866a16",
+  "id" : "f01b6e99-7284-4b7c-9402-a886feb62aca",
+  "label" : "applist",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-applist",
+  "type" : "route",
+  "urlPrefix" : "applist"
+}

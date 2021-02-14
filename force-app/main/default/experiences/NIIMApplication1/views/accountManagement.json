@@ -13,38 +13,38 @@
         "tabsetConfig" : {
           "UUID" : "45ce4966-2313-400d-a63b-3fba7de1ab88",
           "activeTab" : "tab1",
-          "useOverflowMenu" : false,
           "tabs" : [ {
             "UUID" : "7347819c-183f-46cc-badf-be57d92b7b6a",
-            "tabName" : "Members",
-            "tabKey" : "tab1",
-            "locked" : false,
             "allowGuestUser" : false,
+            "locked" : false,
             "seedComponents" : [ {
-              "fqn" : "forceCommunity:relatedList",
               "attributes" : {
+                "customTitle" : "Members",
                 "parentRecordId" : "{!CurrentUser.accountId}",
                 "relatedListName" : "Users",
-                "customTitle" : "Members",
-                "showCustomTitle" : "true",
                 "showBreadCrumbs" : "false",
-                "showRowNumbers" : "false",
-                "showManualRefreshButton" : "false"
-              }
-            } ]
+                "showCustomTitle" : "true",
+                "showManualRefreshButton" : "false",
+                "showRowNumbers" : "false"
+              },
+              "fqn" : "forceCommunity:relatedList"
+            } ],
+            "tabKey" : "tab1",
+            "tabName" : "Members"
           }, {
             "UUID" : "4a44f98b-4c3e-4e8f-a273-a6334075a82f",
-            "tabName" : "Branding",
-            "tabKey" : "tab2",
-            "locked" : false,
             "allowGuestUser" : false,
+            "locked" : false,
             "seedComponents" : [ {
-              "fqn" : "forceCommunity:accountBrandRecord",
               "attributes" : {
                 "recordId" : "{!CurrentUser.accountId}"
-              }
-            } ]
-          } ]
+              },
+              "fqn" : "forceCommunity:accountBrandRecord"
+            } ],
+            "tabKey" : "tab2",
+            "tabName" : "Branding"
+          } ],
+          "useOverflowMenu" : false
         }
       },
       "componentName" : "forceCommunity:tabset",

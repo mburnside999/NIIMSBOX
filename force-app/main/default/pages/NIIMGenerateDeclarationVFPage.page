@@ -6,7 +6,7 @@
     <h1> NIIM AUTHORISED PRESCRIBER SCHEME</h1><br/><br/>
      
     <b>Application Reference:</b> {!Application__c.name}<br/><br/>
-    <b>Created: </b>  <apex:outputField value="{!Application__C.CreatedDate}"> </apex:outputfield><br/><br/>
+    <b>Created: </b>  <apex:outputField value="{!Application__c.CreatedDate}"> </apex:outputfield><br/><br/>
     <b>Practitioner Name:</b> {!Application__c.Practitioner_s_Name__c}<br/><br/>
     <b>Address:</b> {!Application__c.Address__c}<br/><br/>
     <b>Provider No:</b>  {!Application__c.Medicare_Provider_Number__c}<br/><br/>

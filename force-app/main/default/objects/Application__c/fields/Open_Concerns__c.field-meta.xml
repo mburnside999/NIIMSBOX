@@ -4,11 +4,11 @@
     <externalId>false</externalId>
     <label>Open Concerns</label>
     <summaryFilterItems>
-        <field>Concern__c.Status__c</field>
+        <field>Changes_Required__c.Status__c</field>
         <operation>equals</operation>
         <value>Open</value>
     </summaryFilterItems>
-    <summaryForeignKey>Concern__c.Application__c</summaryForeignKey>
+    <summaryForeignKey>Changes_Required__c.Application__c</summaryForeignKey>
     <summaryOperation>count</summaryOperation>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
