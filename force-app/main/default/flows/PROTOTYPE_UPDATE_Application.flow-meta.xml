@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Send_updated_information</name>
         <label>Send updated information</label>
-        <locationX>1371</locationX>
-        <locationY>735</locationY>
+        <locationX>1460</locationX>
+        <locationY>810</locationY>
         <actionName>InvocableNIIMApplicationEmailSender</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -28,8 +28,8 @@
     <assignments>
         <name>asgnDeclarationStg</name>
         <label>Set Declaration Stage</label>
-        <locationX>1310</locationX>
-        <locationY>580</locationY>
+        <locationX>1460</locationX>
+        <locationY>594</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -60,8 +60,8 @@
     <assignments>
         <name>asgnPrescriberStg</name>
         <label>Set Prescriber Stage</label>
-        <locationX>1238</locationX>
-        <locationY>168</locationY>
+        <locationX>1275</locationX>
+        <locationY>181</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -264,6 +264,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>setWelcome</name>
+        <label>setWelcome</label>
+        <locationX>899</locationX>
+        <locationY>222</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Initial</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Welcome</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>updacollection</name>
         <label>Build the App-Good update collection</label>
         <locationX>335</locationX>
@@ -352,6 +368,31 @@
         </value>
     </choices>
     <decisions>
+        <name>Are_there_open_changes</name>
+        <label>Are there open changes?</label>
+        <locationX>1097</locationX>
+        <locationY>509</locationY>
+        <defaultConnector>
+            <targetReference>asgnDeclarationStg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getApplication.Open_Changes_Required__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_with_open_changes</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_this_record_updateable</name>
         <label>Is this record updateable?</label>
         <locationX>758</locationX>
@@ -378,9 +419,34 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Welcome</targetReference>
+                <targetReference>setWelcome</targetReference>
             </connector>
             <label>Updateable</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>open_changes</name>
+        <label>open changes?</label>
+        <locationX>1103</locationX>
+        <locationY>219</locationY>
+        <defaultConnector>
+            <targetReference>asgnPrescriberStg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None open</defaultConnectorLabel>
+        <rules>
+            <name>YesOpen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getApplication.Open_Changes_Required__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remind_user_of_open_changes</targetReference>
+            </connector>
+            <label>Yes</label>
         </rules>
     </decisions>
     <decisions>
@@ -389,7 +455,7 @@
         <locationX>953</locationX>
         <locationY>532</locationY>
         <defaultConnector>
-            <targetReference>asgnDeclarationStg</targetReference>
+            <targetReference>Are_there_open_changes</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -757,8 +823,8 @@
     <screens>
         <name>Check_your_email</name>
         <label>Check your email</label>
-        <locationX>1508</locationX>
-        <locationY>735</locationY>
+        <locationX>1622</locationX>
+        <locationY>814</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1417,13 +1483,13 @@
     <screens>
         <name>Welcome</name>
         <label>Welcome</label>
-        <locationX>1107</locationX>
-        <locationY>199</locationY>
+        <locationX>996</locationX>
+        <locationY>200</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>asgnPrescriberStg</targetReference>
+            <targetReference>open_changes</targetReference>
         </connector>
         <fields>
             <name>PIInitial</name>
@@ -1506,7 +1572,29 @@
             <targetReference>getApplication</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <subflows>
+        <name>Deal_with_open_changes</name>
+        <label>Deal with open changes</label>
+        <locationX>1366</locationX>
+        <locationY>425</locationY>
+        <connector>
+            <targetReference>asgnDeclarationStg</targetReference>
+        </connector>
+        <flowName>NIIM_Open_Changes</flowName>
+        <inputAssignments>
+            <name>varApplicationId</name>
+            <value>
+                <elementReference>varApplicationId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varFlowMode</name>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
     <subflows>
         <name>Files_List</name>
         <label>Show previously uploaded files</label>
@@ -1520,6 +1608,28 @@
             <name>inboundApplicationId</name>
             <value>
                 <elementReference>varApplicationId</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Remind_user_of_open_changes</name>
+        <label>Remind user of open changes</label>
+        <locationX>1195</locationX>
+        <locationY>23</locationY>
+        <connector>
+            <targetReference>asgnPrescriberStg</targetReference>
+        </connector>
+        <flowName>NIIM_Open_Changes</flowName>
+        <inputAssignments>
+            <name>varApplicationId</name>
+            <value>
+                <elementReference>varApplicationId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varFlowMode</name>
+            <value>
+                <stringValue>List</stringValue>
             </value>
         </inputAssignments>
     </subflows>
@@ -1603,7 +1713,7 @@
         <name>NewAppGood</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
-        <isInput>true</isInput>
+        <isInput>false</isInput>
         <isOutput>true</isOutput>
         <objectType>App_Good__c</objectType>
     </variables>

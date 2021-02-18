@@ -1,0 +1,44 @@
+<messaging:emailTemplate recipientType="Contact"
+    relatedToType="Application__c"
+    subject="AG report for Account: {!relatedTo.name}"
+    replyTo="support@acme.com">
+
+    <messaging:htmlEmailBody >
+        <html>
+            <body>
+
+            <p>Dear {!recipient.name},</p>
+            <p>Congratulations, your application to prescribe medicinal cannabis has been approved by the NIIM HREC.</p>
+            
+            <p>The following products and indications are approved. </p>
+            
+           <h2>Approved Products and Indications</h2>
+            <table border="1" >
+                <tr>
+                    <th>Trade Name</th>
+                      <th>Company</th>
+                      <th>Indications</th>
+                    
+                </tr>
+                <apex:repeat var="cx" value="{!relatedTo.App_Goods__r}">
+                <tr>
+                    
+                    <td>{!cx.Product_Trade_Name__c}</td>
+                    <td>{!cx.Product_Company__c}</td>
+                    
+                <td>{!cx.App_Good_Indications__c}</td>
+                </tr>
+                </apex:repeat> 
+                </table>
+ 
+            
+            <p/>
+            <center>
+                <apex:outputLink value="http://www.niim.com.au">
+                    For more detailed information about the approval process visit NIIM
+                </apex:outputLink>
+            </center>
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

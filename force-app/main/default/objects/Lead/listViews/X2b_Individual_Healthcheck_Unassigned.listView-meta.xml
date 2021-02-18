@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2b_Individual_Healthcheck_Unassigned</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.Individual_Healthcheck_Lead</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>In Progress,Attempted Contact</value>
+    </filters>
+    <label>2b. Individual Healthcheck - In Progress</label>
+    <language>en_US</language>
+</ListView>

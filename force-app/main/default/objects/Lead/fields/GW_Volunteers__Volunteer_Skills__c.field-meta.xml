@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GW_Volunteers__Volunteer_Skills__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the skill(s) this person has that should be used to find volunteer jobs.</inlineHelpText>
+    <label>Volunteer Skills</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Computer usage</fullName>
+                <default>false</default>
+                <label>Computer usage</label>
+            </value>
+            <value>
+                <fullName>Manual labor</fullName>
+                <default>false</default>
+                <label>Manual labor</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Fundraising</fullName>
+                <default>false</default>
+                <label>Fundraising</label>
+            </value>
+            <value>
+                <fullName>Event Planning</fullName>
+                <default>false</default>
+                <label>Event Planning</label>
+            </value>
+            <value>
+                <fullName>Landscaping</fullName>
+                <default>false</default>
+                <label>Landscaping</label>
+            </value>
+            <value>
+                <fullName>Administration</fullName>
+                <default>false</default>
+                <label>Administration</label>
+            </value>
+            <value>
+                <fullName>Building Maintenance</fullName>
+                <default>false</default>
+                <label>Building Maintenance</label>
+            </value>
+            <value>
+                <fullName>Clinic/Patient Liaison</fullName>
+                <default>false</default>
+                <label>Clinic/Patient Liaison</label>
+            </value>
+            <value>
+                <fullName>Committee Participation</fullName>
+                <default>false</default>
+                <label>Committee Participation</label>
+            </value>
+            <value>
+                <fullName>Event Planning/Event Personnel</fullName>
+                <default>false</default>
+                <label>Event Planning/Event Personnel</label>
+            </value>
+            <value>
+                <fullName>Gardening/Landscaping</fullName>
+                <default>false</default>
+                <label>Gardening/Landscaping</label>
+            </value>
+            <value>
+                <fullName>Graphics/Design/Copywriting</fullName>
+                <default>false</default>
+                <label>Graphics/Design/Copywriting</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Photography/Videography</fullName>
+                <default>false</default>
+                <label>Photography/Videography</label>
+            </value>
+            <value>
+                <fullName>Professional Consulting</fullName>
+                <default>false</default>
+                <label>Professional Consulting</label>
+            </value>
+            <value>
+                <fullName>Reception</fullName>
+                <default>false</default>
+                <label>Reception</label>
+            </value>
+            <value>
+                <fullName>Research Assistance</fullName>
+                <default>false</default>
+                <label>Research Assistance</label>
+            </value>
+            <value>
+                <fullName>Word Processing/Typing</fullName>
+                <default>false</default>
+                <label>Word Processing/Typing</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Academic Support</fullName>
+                <default>false</default>
+                <label>Academic Support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

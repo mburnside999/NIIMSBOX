@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X4b_Volunteer_Lead_In_Progress</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.Volunteer_Lead</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </filters>
+    <label>4b. Volunteer Lead - In Progress</label>
+    <language>en_US</language>
+    <queue>Volunteer_Leads</queue>
+</ListView>
